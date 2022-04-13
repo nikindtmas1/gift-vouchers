@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const voucherSchema = new mongoose.Schema({
 
-    date: Number,
+    date: String,
     numVoucher: Number,
     nameBuyer: String,
     nameOwn: String,
@@ -10,9 +10,9 @@ const voucherSchema = new mongoose.Schema({
     treatment: String,
     count: Number,
     price: Number,
-    validDate: Number,
+    validDate: String,
     typeTransaction: String,
-    usedDate: Number,
+    usedDate: String,
 });
 
 module.exports = mongoose.model('Voucher', voucherSchema);
