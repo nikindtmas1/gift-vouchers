@@ -2,17 +2,17 @@ const mongoose = require('mongoose');
 
 const voucherSchema = new mongoose.Schema({
 
-    dayDate: Number,
+    date: Number,
     numVoucher: Number,
-    nameSel: String,
+    nameBuyer: String,
     nameOwn: String,
-    nameEmploy: String,
+    nameEmployee: String,
     treatment: String,
     count: Number,
     price: Number,
     validDate: Number,
     typeTransaction: String,
-    usage: Number,
+    usedDate: Number,
 });
 
 module.exports = mongoose.model('Voucher', voucherSchema);
