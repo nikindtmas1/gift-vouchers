@@ -34,16 +34,26 @@ const Navigation = () => {
     //   </Tabs>
     // </Box>
 
-    <ul>
-      <li>
+    <ul className='navbar'>
+      <div></div>
+      <div className='navdiv'>
+      <li className='navli'>
         <Link to="/home">Home Page</Link>
       </li>
-      <li>
+      </div>
+      <div className='navdiv'>
+      
+      <li className='navli'>
         <Link to="/create">Create Page</Link>
       </li>
-      <li>
+     
+      </div>
+      <div className='navdiv'>
+      <li className='navli'>
         <Link to="/login">Login</Link>
       </li>
+      </div>
+      <div></div>
     </ul>
   );
 }

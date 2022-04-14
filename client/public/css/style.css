@@ -28,3 +28,27 @@ label {
     margin-right: 10px
 }
 
+.navbar {
+    background: #50dcff;
+    color: black;
+}
+
+.navbar .navdiv .navli {
+    
+    /* text-align: center; */
+    text-decoration: underline;
+    padding: '20px';
+    margin: '20px';
+    display: flex;
+}
+
+.navbar .navdiv {
+    /* display: flex; */
+    padding: '10px';
+    margin: '10px';
+}
+
+.footer {
+    background: #333;
+    color: aliceblue;
+}
