@@ -29,9 +29,9 @@ const Navigation = () => {
   return (
     <Box sx={{ width: '100%' }}>
       <Tabs  aria-label="nav tabs example">
-        <LinkTab label="Page One" href="/drafts" />
-        <LinkTab label="Page Two" href="/trash" />
-        <LinkTab label="Page Three" href="/spam" />
+        <LinkTab label="Page One" href="/home" />
+        <LinkTab label="Page Two" href="/create" />
+        <LinkTab label="Page Three" href="/login" />
       </Tabs>
     </Box>
   )
