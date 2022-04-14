@@ -24,12 +24,12 @@ const HomePage = () => {
 
       <form className="form" action="#" autocomplete="off">
         <fieldset className="url">
-          <input id="url" type="text" name="url" required />
+          <input id="url" type="text" name="url" placeholder='Search voucher...' />
           {/* <label for="url"><i className="fa fa-search" aria-hidden="true"></i> Search</label> */}
           <div className="after"></div>
         </fieldset>
-        <fieldset className="enter">
-          <button>Find</button>
+        <fieldset className="enterhome">
+          <button className='homebutton'>Find</button>
         </fieldset>
       </form>
     </>

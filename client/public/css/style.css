@@ -34,7 +34,7 @@ label {
 }
 
 .navbar .navdiv .navli {
-    
+    font-weight: 600;
     /* text-align: center; */
     text-decoration: underline;
     padding: '20px';
@@ -93,11 +93,41 @@ img{
             flex-grow: 0;
   }
 
+  .url input {
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* height: 50px; */
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  }
+
   .enter{
     margin: 20px 20px;
     /* -webkit-box-flex: 1; */
         /* -ms-flex-positive: 1; */
             flex-grow: 250;
+  }
+
+  .enterhome{
+    margin: 40px 40px;
+    
+    /* -webkit-box-flex: 1;
+        -ms-flex-positive: 1; */
+          
+  }
+
+  .homebutton {
+
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    /* box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white; */
+    transition: 0.5s;
   }
 
   .containerlogin {
@@ -112,6 +142,19 @@ img{
     box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
   }
   
+  .containercreate {
+    margin-left: 10px;
+    position: relative;
+    width: 580px;
+    height: 630px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  
+  }
+
   .brand-logo {
     height: 100px;
     width: 100px;

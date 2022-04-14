@@ -11,7 +11,7 @@ const CreatePage = () => {
         <div className="col-lg-7 mx-auto">
             <div className="card mt-2 mx-auto p-4 bg-light">
                 <div className="card-body bg-light">
-                    <div className="container">
+                    <div className="containercreate">
                         <form id="contact-form" >
                             <div className="controls">
                                 <div className="row">
