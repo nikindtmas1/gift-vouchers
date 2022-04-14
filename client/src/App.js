@@ -1,6 +1,11 @@
+import { Route, Switch } from 'react-router-dom';
+
+import HomePage from './components/HomePage/HomePage';
 import CreatePage from "./components/CreatePage/CreatePage";
+import LoginPage from "./components/LoginPage/LoginPage";
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
+
 
 function App() {
   
@@ -10,7 +15,12 @@ function App() {
           <Navigation />
       </header>
       <div>
-          <CreatePage />
+        <Switch>
+          <Route path='/home' exact component={HomePage} />
+          <Route path='/create' component={CreatePage} />
+          <Route path='/login' component={LoginPage} />
+        </Switch>
+          {/* <CreatePage /> */}
         <br />
       </div>
       <Footer />
