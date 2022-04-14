@@ -52,3 +52,114 @@ label {
     background: #333;
     color: aliceblue;
 }
+
+img{
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+  }
+
+
+  .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    padding-top: 50px;
+  }
+  
+  fieldset {
+    position: relative;
+  }
+
+.fa-search {
+    position: inherit;
+    top: 0px;
+    font-size: 20px !important;
+  }
+
+  .url{
+    margin: 20px 20px;
+    padding-left: 50px;
+    -webkit-box-flex: 5;
+        -ms-flex-positive: 5;
+            flex-grow: 0;
+  }
+
+  .enter{
+    margin: 20px 20px;
+    /* -webkit-box-flex: 1; */
+        /* -ms-flex-positive: 1; */
+            flex-grow: 250;
+  }
+
+  .containerlogin {
+    margin-left: 420px;
+    position: relative;
+    width: 350px;
+    height: 530px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  }
+  
+  .brand-logo {
+    height: 100px;
+    width: 100px;
+    background: url("https://img.icons8.com/color/100/000000/twitter--v2.png");
+    margin: auto;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+  }
+
+  .inputs {
+    text-align: left;
+    margin-top: 30px;
+  }
+
+ .inputs input {
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* height: 50px; */
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  }
+
+  .loginbutton {
+    color: white;
+    margin-top: 60px;
+    background: #1DA1F2;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+  }
+  
+  .loginbutton:hover {
+    box-shadow: none;
+  }
+
+ .inputs label, input, button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+  }

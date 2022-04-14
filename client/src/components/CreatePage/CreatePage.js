@@ -4,7 +4,7 @@ const CreatePage = () => {
 
 
   return (
-    <div className="container"><div className=" text-center mt-5 ">
+    <div className="containerCreate"><div className=" text-center mt-5 ">
         <h1>Create Voucher Form</h1>
     </div>
     <div className="row ">
