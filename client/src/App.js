@@ -3,13 +3,16 @@ import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 
 function App() {
+  
   return (
     <div className="App">
       <header className="App-header">
           <Navigation />
-          <CreatePage />
       </header>
-      <div><br /></div>
+      <div>
+          <CreatePage />
+        <br />
+      </div>
       <Footer />
     </div>
   );
