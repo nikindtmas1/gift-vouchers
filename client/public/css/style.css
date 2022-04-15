@@ -37,15 +37,15 @@ label {
     font-weight: 600;
     /* text-align: center; */
     text-decoration: underline;
-    padding: '20px';
-    margin: '20px';
+    /* padding: 10px;
+    margin: 10px; */
     display: flex;
 }
 
 .navbar .navdiv {
-    /* display: flex; */
-    padding: '10px';
-    margin: '10px';
+    display: flex;
+    /* padding: 10px; */
+    margin: 10px;
 }
 
 .footer {
@@ -55,6 +55,7 @@ label {
 
 .homeimg img{
     display: block;
+    /* margin-right: 10px; */
     /* margin: auto; */
     width: 100%;
     height: auto;
@@ -99,9 +100,9 @@ input.search {
   .url{
     margin: 20px 20px;
     padding-left: 50px;
-    -webkit-box-flex: 5;
+    /* -webkit-box-flex: 5;
         -ms-flex-positive: 5;
-            flex-grow: 0;
+            flex-grow: 0; */
   }
 
   .url input {
@@ -117,10 +118,10 @@ input.search {
   }
 
   .enter{
-    margin: 20px 20px;
+    /* margin: 20px 20px; */
     /* -webkit-box-flex: 1; */
         /* -ms-flex-positive: 1; */
-            flex-grow: 250;
+            /* flex-grow: 250; */
   }
 
   .enterhome{
@@ -144,14 +145,15 @@ input.search {
 
   .containerlogin {
     margin-left: 420px;
+    margin-bottom: 20px;
     position: relative;
     width: 350px;
-    height: 530px;
+    height: 534px;
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
     background: #ecf0f3;
-    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+    /* box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white; */
   }
   
   .containercreate {
@@ -196,7 +198,7 @@ input.search {
 
   .loginbutton {
     color: white;
-    margin-top: 60px;
+    margin-top: 80px;
     background: #1DA1F2;
     height: 40px;
     border-radius: 20px;
