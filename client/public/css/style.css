@@ -60,7 +60,10 @@ img{
     height: auto;
   }
 
-
+  /* img {
+    height: 200px;
+    width: auto;
+} */
   .form {
     display: -webkit-box;
     display: -ms-flexbox;
