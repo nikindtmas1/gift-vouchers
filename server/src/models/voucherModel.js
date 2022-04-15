@@ -13,6 +13,7 @@ const voucherSchema = new mongoose.Schema({
     validDate: String,
     typeTransaction: String,
     usedDate: String,
+    notes: String
 });
 
 module.exports = mongoose.model('Voucher', voucherSchema);
