@@ -17,7 +17,7 @@ function App() {
       </header>
       <div>
         <Switch>
-          <Route path='/home' exact component={HomePage} />
+          <Route path='/home'  component={HomePage} />
           <Route path='/create' component={CreatePage} />
           <Route path='/login' component={LoginPage} />
           <Route path='/search' component={Search} />
