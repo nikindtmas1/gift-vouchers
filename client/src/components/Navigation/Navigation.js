@@ -22,11 +22,6 @@ const Navigation = () => {
           <Link to="/login">Login</Link>
         </li>
       </div>
-      <div className="navdiv">
-        <li className="navli">
-          <Link to="/search">Search</Link>
-        </li>
-      </div>
       <div></div>
     </ul>
   );
