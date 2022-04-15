@@ -1,6 +1,27 @@
 import React from 'react'
 
 const HomePage = () => {
+
+//   async function getAll(query){
+
+//     let results = await Cube.find({}).lean();
+ 
+//     if(query.search){
+//       results = results.filter((x) => x.name.toLowerCase().includes(query.search));
+//     };
+ 
+//     if(query.from){
+//         results = results.filter((x) => Number(x.difficultyLevel) >= query.from);
+//     }
+ 
+//     if(query.to){
+//         results = results.filter((x) => Number(x.difficultyLevel) <= query.to);
+//     }
+ 
+ 
+//     return results;
+//  }
+
   return (
     <>
       <div className="menu">
