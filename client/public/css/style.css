@@ -53,9 +53,9 @@ label {
     color: aliceblue;
 }
 
-img{
+.homeimg img{
     display: block;
-    margin: auto;
+    /* margin: auto; */
     width: 100%;
     height: auto;
   }
@@ -78,6 +78,14 @@ img{
     padding-top: 50px;
   }
   
+  input.difficulty {
+    width: 20%;
+}
+
+input.search {
+    width: 50%;
+}
+
   fieldset {
     position: relative;
   }
@@ -124,8 +132,9 @@ img{
   }
 
   .homebutton {
-
+    width: 60px;
     height: 40px;
+    background: #1df2cb;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
