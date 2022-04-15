@@ -56,7 +56,7 @@ label {
 .homeimg img{
     display: block;
     /* margin-right: 10px; */
-    /* margin: auto; */
+    margin: auto;
     width: 100%;
     height: auto;
   }
@@ -117,12 +117,12 @@ input.search {
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
   }
 
-  .enter{
-    /* margin: 20px 20px; */
-    /* -webkit-box-flex: 1; */
-        /* -ms-flex-positive: 1; */
-            /* flex-grow: 250; */
-  }
+  /* .enter{
+    margin: 20px 20px;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 250;
+  } */
 
   .enterhome{
     margin: 40px 40px;
@@ -145,15 +145,15 @@ input.search {
 
   .containerlogin {
     margin-left: 420px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     position: relative;
     width: 350px;
-    height: 534px;
+    height: 509px;
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
     background: #ecf0f3;
-    /* box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white; */
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
   }
   
   .containercreate {
