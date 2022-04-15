@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage';
 import CreatePage from "./components/CreatePage/CreatePage";
 import LoginPage from "./components/LoginPage/LoginPage";
+import Search from './components/Serch/Search';
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/home' exact component={HomePage} />
           <Route path='/create' component={CreatePage} />
           <Route path='/login' component={LoginPage} />
+          <Route path='/search' component={Search} />
         </Switch>
           {/* <CreatePage /> */}
         <br />
