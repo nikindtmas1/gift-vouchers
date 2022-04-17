@@ -28,6 +28,15 @@ label {
     margin-right: 10px
 }
 
+/* .createcard-body{
+  -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+  display: inline-flex;
+  background-color: #f8f9fa!important;
+} */
+
 .navbar {
     background: #57e9b1;
     color: black;
@@ -221,3 +230,8 @@ input.search {
     outline: none;
     box-sizing: border-box;
   }
+
+  /* .createlight {
+    display: inline-flex;
+    background-color: #f8f9fa!important;
+} */
