@@ -6,8 +6,8 @@ const LoginPage = () => {
   {/* <div className="brand-logo"></div>
   <div className="brand-title">TWITTER</div> */}
   <div className="inputs">
-    <label>EMAIL</label>
-    <input type="email" placeholder="example@test.com" />
+    <label>USER NAME</label>
+    <input type="text" placeholder="User name" />
     <label>PASSWORD</label>
     <input type="password" placeholder="Min 6 charaters long" />
     <button className='loginbutton' type="submit">LOGIN</button>
