@@ -13,4 +13,23 @@ router.get('/', async (req, res) => {
     res.json(vouchers);
 });
 
+router.get('/:id', async (req, res) => {
+
+    let result = await voucherService.getOneVoucher(req.params.id);
+    res.json(result);
+});
+
+router.post('/', async (req, res) => {
+
+    await voucherService.createVoucher({...req.body});
+    res.json({ok: true})
+
+});
+
+router.put('/:id', async (req, res) => {
+
+    await voucherService.updateVoucher(req.params.id, req.body);
+    res.json({ok: true});
+});
+
 module.exports = router;
