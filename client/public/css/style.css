@@ -49,6 +49,7 @@ label {
 }
 
 .footer {
+  height: 50px;
     background: #333;
     color: aliceblue;
 }
