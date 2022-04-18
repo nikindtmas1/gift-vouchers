@@ -25,4 +25,7 @@ export async function editVoucher(id, data){
     return response;
 };
 
+export async function createVoucher(data){
+    return await service.post(host + '/vouchers', data);
+};
 
