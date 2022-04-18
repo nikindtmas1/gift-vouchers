@@ -38,8 +38,10 @@ label {
 } */
 
 .navbar {
+  display: flex;
     background: #57e9b1;
     color: black;
+    justify-content: space-between;
 }
 
 .navbar .navdiv .navli {
@@ -49,12 +51,14 @@ label {
     /* padding: 10px;
     margin: 10px; */
     display: flex;
+    justify-content: flex-end;
 }
 
 .navbar .navdiv {
     display: flex;
     /* padding: 10px; */
     margin: 10px;
+    justify-content: space-between;
 }
 
 .footer {
@@ -167,6 +171,7 @@ input.search {
   }
   
   .containercreate {
+    display: flex;
     margin-left: 10px;
     position: relative;
     width: 580px;
@@ -178,6 +183,112 @@ input.search {
     box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
   
   }
+
+  .cardcreate{
+    position: relative;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    min-width: 0px;
+    overflow-wrap: break-word;
+    background-color: rgb(255, 255, 255);
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 1.5rem !important;
+    margin-top: 0.5rem !important;
+    background-color: rgb(248, 249, 250) !important;
+    box-sizing: border-box;
+  }
+
+  .card-bodycreate{
+    background-color: #f8f9fa!important;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .containercreate{
+    display: flex;
+    margin-left: 10px;
+    position: relative;
+    width: 580px;
+    height: 630px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  }
+
+  .contact-formcreate{
+    box-sizing: border-box;
+    display: block;
+    margin-top: 0em;
+    -webkit-box-direction: normal;
+    word-wrap: break-word;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+  }
+.controlcreateP{
+  box-sizing: border-box;
+  display: block;
+  -webkit-box-direction: normal;
+  word-wrap: break-word;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+.rowcreate{
+  display: flex;
+  /* -ms-flex-wrap: wrap; */
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  -webkit-box-direction: normal;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+.col-mdcreate{
+  -webkit-box-flex: 0;
+    /* -ms-flex: 0 0 50%; */
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.form-groupcreate{
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  display: block;
+}
 
   .brand-logo {
     height: 100px;
