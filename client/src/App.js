@@ -2,6 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import HomePage from './components/HomePage/HomePage';
 import CreatePage from "./components/CreatePage/CreatePage";
+//import CreateTwo from './components/CreatePage/CreateTwo';
 import LoginPage from "./components/LoginPage/LoginPage";
 import Dashboard from './components/Dashboard/Dashboard';
 import Navigation from "./components/Navigation/Navigation";
