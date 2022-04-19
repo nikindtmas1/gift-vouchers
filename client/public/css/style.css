@@ -353,7 +353,14 @@ input.search {
     outline: none;
     box-sizing: border-box;
   }
-
+.btnSearch{
+  background: #0bd6aa;
+  margin: auto;
+  height: 40px;
+  width: 200px;
+  border-radius: 20px;
+  cursor: pointer;
+}
   /* .createlight {
     display: inline-flex;
     background-color: #f8f9fa!important;
