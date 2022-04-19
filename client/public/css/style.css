@@ -111,7 +111,7 @@ label {
             flex-direction: row;
     position: absolute;
     top: 50px;
-    width: 100%;
+    width: 500%;
     padding-top: 50px;
   }
 
@@ -238,12 +238,12 @@ input.search {
 
   .searchcontainer{
     display: flex;
-    /* margin: auto; */
+    margin: auto;
     /* position: initial; */
-    width: 580px;
+    /* width: 580px; */
     height: 630px;
     border-radius: 20px;
-    /* padding: 40px; */
+    padding: 350px;
     box-sizing: border-box;
     background: #ecf0f3;
     box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
