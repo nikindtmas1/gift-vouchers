@@ -30,7 +30,7 @@ function App() {
       <header className="">
           <Navigation />
       </header>
-      <div>
+      <div className='mainpage'>
         <Switch>
           <Route path='/' exact component={Dashboard} />
           <Route path='/home'  component={HomePage} />
@@ -41,6 +41,7 @@ function App() {
           {/* <CreatePage /> */}
       
       </div>
+      <div><br /></div>
       <Footer />
     </div>
   );
