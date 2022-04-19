@@ -7,6 +7,8 @@ const Navigation = () => {
   return (
     <ul className="navbar">
       <div></div>
+      <div></div>
+      <div></div>
       <div className="navdiv">
         <li className="navli">
           <Link to="/home">Home Page</Link>
@@ -27,6 +29,8 @@ const Navigation = () => {
           <Link to="/logout">Logout</Link>
         </li>
       </div>
+      <div></div>
+      <div></div>
       <div></div>
     </ul>
   );
