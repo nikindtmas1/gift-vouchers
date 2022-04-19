@@ -6,7 +6,7 @@ const SearchPage = () => {
         {/* <div className=" text-center mt-5 ">
             <h1>Search Page</h1>
         </div> */}
-        <form>
+        <form className='formSearch'>
             <div className='controls'>
                 <div className='row'>
                     <div className="col-md-6">
