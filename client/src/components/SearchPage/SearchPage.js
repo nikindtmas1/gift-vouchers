@@ -32,6 +32,12 @@ const SearchPage = () => {
                         <div className="form-group"> <label for="form_lastname">Email *</label> <input id="form_lastname" type="email" name="email" className="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required." /> </div>
                     </div>
                 </div>
+                <div className="row">       
+                    <div className="col-md-12">
+                         <input type="submit" className="btnSearch" value="Edit" /> 
+                    </div>
+                </div>
+                
             </div>
         </form>
     </div>
