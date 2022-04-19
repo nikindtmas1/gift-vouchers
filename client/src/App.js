@@ -1,4 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
+import {useState ,useEffect} from 'react';
+
+import * as services from './components/Services/data';
 
 import HomePage from './components/HomePage/HomePage';
 import CreatePage from "./components/CreatePage/CreatePage";
@@ -12,6 +15,16 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   
+  const [vouchers, setVaouchers] = useState([])
+
+  useEffect(() => {
+
+    services.getAll()
+    .then((result) => setVaouchers(result))
+    .catch(err => alert(err.message))
+  },[]);
+
+  console.log(vouchers);
   return (
     <div className="">
       <header className="">
