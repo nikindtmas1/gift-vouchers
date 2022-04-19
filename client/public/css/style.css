@@ -10,6 +10,12 @@ label {
     color: #333
 }
 
+/* .mainpage{
+  display: initial;
+  margin: auto;
+  padding: auto;
+} */
+
 .btn-send {
     font-weight: 300;
     text-transform: uppercase;
@@ -62,9 +68,10 @@ label {
 }
 
 .footer {
+  padding-top: 6px;
   height: 50px;
-    background: #333;
-    color: aliceblue;
+  background: #333;
+  color: aliceblue;
 }
 
 .homeimg img{
@@ -93,6 +100,21 @@ label {
     padding-top: 50px;
   }
   
+  .formSearch {
+    padding-left: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    padding-top: 50px;
+  }
+
   input.difficulty {
     width: 20%;
 }
@@ -216,12 +238,12 @@ input.search {
 
   .searchcontainer{
     display: flex;
-    margin: auto;
-    /* position: inherit; */
+    /* margin: auto; */
+    /* position: initial; */
     width: 580px;
     height: 630px;
     border-radius: 20px;
-    padding: 40px;
+    /* padding: 40px; */
     box-sizing: border-box;
     background: #ecf0f3;
     box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
@@ -354,6 +376,7 @@ input.search {
     box-sizing: border-box;
   }
 .btnSearch{
+  letter-spacing: 0.2em;
   background: #0bd6aa;
   margin: auto;
   height: 40px;
