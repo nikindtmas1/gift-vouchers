@@ -1,18 +1,9 @@
-import React, {useState ,useEffect} from 'react';
-import * as services from '../Services/data';
+import React from 'react';
+
 
 const HomePage = () => {
 
-  const [vouchers, setVaouchers] = useState([])
-
-  useEffect(() => {
-
-    services.getAll()
-    .then((result) => setVaouchers(result))
-    .catch(err => alert(err.message))
-  },[]);
-
-  console.log(vouchers);
+  
 //   async function getAll(query){
 
 //     let results = await Cube.find({}).lean();
