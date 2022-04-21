@@ -2,13 +2,13 @@ import React from 'react'
 
 const SearchPage = () => {
   return (
-    <div className='searchcontainer'>
-        {/* <div className=" text-center mt-5 ">
-            <h1>Search Page</h1>
-        </div> */}
-        <div className='formDiv'>
-        <form className='formSearch'>
-            <div className='controls'>
+    <div className='searchDiv'>
+        <div className='searchcontainer'>
+            {/* <div className=" text-center mt-5 ">
+                <h1>Search Page</h1>
+            </div> */}
+            <form className='formSearch'>
+                <div className='controls'>
                 <div className='row'>
                     <div className="col-md-6">
                         <div className="form-group"> <label for="form_name">Date *</label> <input id="form_name" type="text" name="date" className="form-control" placeholder="Please enter Date *" required="required" data-error="Date is required." /> </div>
@@ -39,8 +39,8 @@ const SearchPage = () => {
                     </div>
                 </div>
                 
-            </div>
-        </form>
+                </div>
+            </form>
         </div>
     </div>
   )
