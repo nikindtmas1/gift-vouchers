@@ -100,9 +100,16 @@ label {
     padding-top: 50px;
   }
   
+  .formDiv{
+    padding: 20px;
+    margin: 30px;
+    border: #333;
+  }
+
   .formSearch {
+    padding: inherit;
     /* padding-left: 325px; */
-    margin-left: 350px;
+    /* margin-left: 350px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -110,10 +117,10 @@ label {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    position: absolute;
+    position: absolute; */
     /* top: 50px; */
-    width: 100%;
-    padding-top: 50px;
+    /* width: 500px;
+    padding-top: 50px; */
   }
 
   input.difficulty {
@@ -239,11 +246,11 @@ input.search {
 
   .searchcontainer{
     /* display: flex; */
-    /* margin: auto; */
+    margin: 150px;
     /* position: initial; */
     /* width: 580px; */
     height: 630px;
-    /* border-radius: 20px; */
+    border-radius: 20px;
     /* padding: 350px; */
     /* box-sizing: border-box; */
     background: #ecf0f3;
