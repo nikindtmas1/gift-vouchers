@@ -1,6 +1,8 @@
 import { Route, Switch } from 'react-router-dom';
 import {useState ,useEffect} from 'react';
 
+import AuthCtx from './contexts/AuthCtx';
+
 import * as services from './components/Services/data';
 
 import HomePage from './components/HomePage/HomePage';
@@ -26,6 +28,7 @@ function App() {
 
   console.log(vouchers);
   return (
+    <AuthCtx.Provider value={{vouchers}}>
     <div className="">
       <header className="">
           <Navigation />
@@ -44,6 +47,7 @@ function App() {
       <div><br /></div>
       <Footer />
     </div>
+    </AuthCtx.Provider>
   );
 }
 
