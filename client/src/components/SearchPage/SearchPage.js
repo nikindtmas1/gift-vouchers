@@ -6,6 +6,7 @@ const SearchPage = () => {
         {/* <div className=" text-center mt-5 ">
             <h1>Search Page</h1>
         </div> */}
+        <div className='formDiv'>
         <form className='formSearch'>
             <div className='controls'>
                 <div className='row'>
@@ -40,6 +41,7 @@ const SearchPage = () => {
                 
             </div>
         </form>
+        </div>
     </div>
   )
 }
