@@ -1,6 +1,7 @@
 import React from 'react'
 
-const SearchPage = () => {
+const SearchPage = ({data}) => {
+    console.log(data);
   return (
     <div className='searchDiv'>
         <div className='searchcontainer'>
@@ -11,7 +12,7 @@ const SearchPage = () => {
                 <div className='controls'>
                 <div className='row'>
                     <div className="col-md-6">
-                        <div className="form-group"> <label for="form_name">Date *</label> <input id="form_name" type="text" name="date" className="form-control" placeholder="Please enter Date *" required="required" data-error="Date is required." /> </div>
+                        <div className="form-group"> <label for="form_name">Date *</label> <input id="form_name" type="text" name="date" className="form-control" required="required" data-error="Date is required." ></input> </div>
                         <div className="form-group"> <label for="form_name">Number Voucher *</label> <input id="form_name" type="text" name="numberVoucher" className="form-control" placeholder="Enter Number Voucher *" required="required" data-error="Number Voucher is required." /> </div>
                         <div className="form-group"> <label for="form_name">Name Buyer *</label> <input id="form_name" type="text" name="nameBuyer" className="form-control" placeholder="Enter Name Buyer *" required="required" data-error="Name Buyer is required." /> </div>
                     </div>
