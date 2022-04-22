@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SearchPage = ({data}) => {
+const SearchPage = (data) => {
     console.log(data);
   return (
     <div className='searchDiv'>
