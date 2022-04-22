@@ -26,7 +26,8 @@ const HomePage = () => {
       let foundVoucher = vouchers.filter((x) => x.numVoucher === Number(numberVoucher));
       searchVoucher = foundVoucher;
 
-        console.log(foundVoucher);
+      console.log(searchVoucher);
+        console.log(searchVoucher[0].email);
     }
     // if(ownerName !== '' && ownerName !== undefined){
     //   searchVoucher = ownerName;
@@ -105,7 +106,7 @@ const HomePage = () => {
           <button className='homebutton'>Find</button>
         </fieldset> */}
       </form>
-      <SearchPage data={searchVoucher} ></SearchPage>
+      <SearchPage data={{searchVoucher}} ></SearchPage>
     </>
   );
 }
