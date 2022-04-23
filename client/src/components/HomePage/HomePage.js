@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useContext } from 'react';
 import AuthCtx from '../../contexts/AuthCtx';
 //import SearchPage from '../SearchPage/SearchPage';
@@ -9,14 +9,14 @@ const HomePage = () => {
   let value = useContext(AuthCtx);
   let vouchers = value.vouchers;
 
-  let searchVoucher;
+  //let searchVoucher;
  
   //let voucherData
-  // const [searchVoucher, setSearchVoucher] = useState('');
-  // const [voucherData, setVoucherData] = useState({});
+  const [searchVoucher, setSearchVoucher] = useState();
+  const [isVoucher, setIsVoucher] = useState(false);
 
   const onSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     let formData = new FormData(e.currentTarget);
     let numberVoucher = formData.get('numVoucher');
@@ -25,11 +25,13 @@ const HomePage = () => {
     if(numberVoucher !== '' && numberVoucher !== undefined){
       
       let foundVoucher = vouchers.filter((x) => x.numVoucher === Number(numberVoucher));
-      searchVoucher = foundVoucher;
+      console.log(foundVoucher);
+      setSearchVoucher(foundVoucher[0]);
 
+      setIsVoucher(true)
       console.log(searchVoucher);
      
-        console.log(searchVoucher[0].email);
+        console.log(searchVoucher.email);
     }
     // if(ownerName !== '' && ownerName !== undefined){
     //   searchVoucher = ownerName;
@@ -108,7 +110,7 @@ const HomePage = () => {
           <button className='homebutton'>Find</button>
         </fieldset> */}
       </form>
-      {searchVoucher ?
+      {isVoucher ?
       <div className='searchDiv'>
       <div className='searchcontainer'>
           {/* <div className=" text-center mt-5 ">
@@ -118,7 +120,7 @@ const HomePage = () => {
               <div className='controls'>
               <div className='row'>
                   <div className="col-md-6">
-                      <div className="form-group"> <label for="form_name">Date *</label> <input id="form_name" type="text" name="date" className="form-control"   required="required" data-error="Date is required." ></input> </div>
+                      <div className="form-group"> <label for="form_name">Date *</label> <input id="form_name" type="text" name="date" className="form-control" defaultValue={searchVoucher.date}  required="required" data-error="Date is required." ></input> </div>
                       <div className="form-group"> <label for="form_name">Number Voucher *</label> <input id="form_name" type="text" name="numberVoucher" className="form-control" placeholder="Enter Number Voucher *" required="required" data-error="Number Voucher is required." /> </div>
                       <div className="form-group"> <label for="form_name">Name Buyer *</label> <input id="form_name" type="text" name="nameBuyer" className="form-control" placeholder="Enter Name Buyer *" required="required" data-error="Name Buyer is required." /> </div>
                   </div>
