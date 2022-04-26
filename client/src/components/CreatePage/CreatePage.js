@@ -10,11 +10,11 @@ const CreatePage = () => {
         e.preventDefault();
         let formData = new FormData(e.currentTarget);
         let date = formData.get("date").trim();
-        let numberVoucher = Number(formData.get("numberVoucher"));
+        let numVoucher = Number(formData.get("numberVoucher"));
         let nameBuyer = formData.get("nameBuyer").trim();
-        let nameOwner = formData.get("nameOwner").trim();
+        let nameOwn = formData.get("nameOwner").trim();
         let nameEmployee = formData.get("nameEmployee").trim();
-        let nameTreatment = formData.get("nameTreatment").trim();
+        let treatment = formData.get("nameTreatment").trim();
         let count = Number(formData.get("count"));
         let price = Number(formData.get("price"));
         let validDate = formData.get("validDate").trim();
@@ -22,8 +22,8 @@ const CreatePage = () => {
         let usedDate = formData.get("usedDate").trim();
         let email = formData.get("email").trim();
 
-        const data = { date, numberVoucher, nameBuyer, nameOwner,
-            nameEmployee, nameTreatment, count, price, validDate,
+        const data = { date, numVoucher, nameBuyer, nameOwn,
+            nameEmployee, treatment, count, price, validDate,
             typeTransaction, usedDate, email }
 
         services.createVoucher(data)
