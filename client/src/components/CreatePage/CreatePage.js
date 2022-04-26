@@ -10,13 +10,13 @@ const CreatePage = () => {
         e.preventDefault();
         let formData = new FormData(e.currentTarget);
         let date = formData.get("date").trim();
-        let numberVoucher = Number(formData.get("numberVoucher")).trim();
+        let numberVoucher = Number(formData.get("numberVoucher"));
         let nameBuyer = formData.get("nameBuyer").trim();
         let nameOwner = formData.get("nameOwner").trim();
         let nameEmployee = formData.get("nameEmployee").trim();
         let nameTreatment = formData.get("nameTreatment").trim();
-        let count = Number(formData.get("count")).trim();
-        let price = Number(formData.get("price")).trim();
+        let count = Number(formData.get("count"));
+        let price = Number(formData.get("price"));
         let validDate = formData.get("validDate").trim();
         let typeTransaction = formData.get("typeTransaction").trim();
         let usedDate = formData.get("usedDate").trim();
