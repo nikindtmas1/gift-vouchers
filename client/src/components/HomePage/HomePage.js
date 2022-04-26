@@ -54,7 +54,7 @@ const HomePage = () => {
 
     let data = {date, numVoucher, nameBuyer, nameOwner, nameEmployee,
        treatment, count, price, validDate, typeTransaction, usedDate, email};
-
+     
     services.editVoucher(searchVoucher._id, data)
     .then(() => {history.push('/')})
     .catch(error => alert(error.message))
