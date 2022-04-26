@@ -42,7 +42,7 @@ const HomePage = () => {
     let date = formData.get('date').trim();
     let numVoucher = Number(formData.get('numberVoucher'));
     let nameBuyer = formData.get('nameBuyer').trim();
-    let nameOwner = formData.get('nameOwner').trim();
+    let nameOwn = formData.get('nameOwner').trim();
     let nameEmployee = formData.get('nameEmployee').trim();
     let treatment = formData.get('nameTreatment').trim();
     let count = Number(formData.get('count'));
@@ -52,7 +52,7 @@ const HomePage = () => {
     let usedDate = formData.get('usedDate').trim();
     let email = formData.get('email').trim();
 
-    let data = {date, numVoucher, nameBuyer, nameOwner, nameEmployee,
+    let data = {date, numVoucher, nameBuyer, nameOwn, nameEmployee,
        treatment, count, price, validDate, typeTransaction, usedDate, email};
      console.log(data);
     services.editVoucher(searchVoucher._id, data)
