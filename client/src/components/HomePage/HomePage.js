@@ -97,11 +97,11 @@ const HomePage = () => {
           {/* <div className=" text-center mt-5 ">
               <h1>Search Page</h1>
           </div> */}
-          <form className='formSearch'>
+          <form onSubmit={editSubmite} className='formSearch' id="contact-form" method='POST'>
               <div className='controls'>
               <div className='row'>
                   <div className="col-md-6">
-                      <div className="form-group"> <label for="form_name">Date *</label><fieldset> <input id="form_name" type="text" name="date" className="form-control" defaultValue={searchVoucher.date}  required="required" data-error="Date is required." ></input></fieldset> </div>
+                      <div className="form-group"> <label for="form_name">Date *</label><fieldset> <input id="form_name" type="text" name="date" className="form-control" defaultValue={searchVoucher.date}  required="required" data-error="Date is required." /></fieldset> </div>
                       <div className="form-group"> <label for="form_name">Number Voucher *</label><fieldset> <input id="form_name" type="text" name="numberVoucher" className="form-control" defaultValue={searchVoucher.numVoucher} placeholder="Enter Number Voucher *" required="required" data-error="Number Voucher is required." /></fieldset> </div>
                       <div className="form-group"> <label for="form_name">Name Buyer *</label><fieldset> <input id="form_name" type="text" name="nameBuyer" className="form-control" defaultValue={searchVoucher.nameBuyer} placeholder="Enter Name Buyer *" required="required" data-error="Name Buyer is required." /></fieldset> </div>
                   </div>
@@ -125,7 +125,7 @@ const HomePage = () => {
               </div>
               <div className="row">       
                   <div className="col-md-12">
-                       <input type="submit" onClick={editSubmite} className="btnSearch" value="Edit" /> 
+                       <input type="submit" className="btnSearch" value="Edit" /> 
                   </div>
               </div>
               
