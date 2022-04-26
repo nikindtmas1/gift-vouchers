@@ -40,13 +40,13 @@ const HomePage = () => {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
     let date = formData.get('date');
-    let numVoucher = formData.get('numberVoucher');
+    let numVoucher = Number(formData.get('numberVoucher'));
     let nameBuyer = formData.get('nameBuyer');
     let nameOwner = formData.get('nameOwner');
     let nameEmployee = formData.get('nameEmployee');
     let treatment = formData.get('nameTreatment');
-    let count = formData.get('count');
-    let price = formData.get('price');
+    let count = Number(formData.get('count'));
+    let price = Number(formData.get('price'));
     let validDate = formData.get('validDate');
     let typeTransaction = formData.get('typeTransaction');
     let usedDate = formData.get('usedDate');
@@ -54,7 +54,7 @@ const HomePage = () => {
 
     let data = {date, numVoucher, nameBuyer, nameOwner, nameEmployee,
        treatment, count, price, validDate, typeTransaction, usedDate, email};
-     
+     console.log(data);
     services.editVoucher(searchVoucher._id, data)
     .then(() => {history.push('/')})
     .catch(error => alert(error.message))
