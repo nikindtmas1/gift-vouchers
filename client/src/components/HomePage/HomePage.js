@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import { useContext } from 'react';
+import {useHistory} from 'react-router-dom';
 import AuthCtx from '../../contexts/AuthCtx';
 //import SearchPage from '../SearchPage/SearchPage';
+
+import * as services from '../Services/data';
 
 
 const HomePage = () => {
@@ -9,6 +12,7 @@ const HomePage = () => {
   let value = useContext(AuthCtx);
   let vouchers = value.vouchers;
 
+  const history = useHistory();
  
   const [searchVoucher, setSearchVoucher] = useState();
   const [isVoucher, setIsVoucher] = useState(false);
@@ -48,9 +52,13 @@ const HomePage = () => {
     let usedDate = formData.get('usedDate');
     let email = formData.get('email');
 
-    let data = {date, numVoucher, nameBuyer, nameOwner, nameEmployee, treatment, count, price, validDate, typeTransaction, usedDate, email};
+    let data = {date, numVoucher, nameBuyer, nameOwner, nameEmployee,
+       treatment, count, price, validDate, typeTransaction, usedDate, email};
 
-    console.log(data);
+    services.editVoucher(searchVoucher._id, data)
+    .then(() => {history.push('/')})
+    .catch(error => alert(error.message))
+   
   }
 
 
