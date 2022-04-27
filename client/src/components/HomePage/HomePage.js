@@ -2,9 +2,12 @@ import React, {useState} from 'react';
 import { useContext } from 'react';
 import {useHistory} from 'react-router-dom';
 import AuthCtx from '../../contexts/AuthCtx';
+import Checkbox from '@mui/material/Checkbox';
+
 //import SearchPage from '../SearchPage/SearchPage';
 
 import * as services from '../Services/data';
+
 
 
 const HomePage = () => {
@@ -16,6 +19,12 @@ const HomePage = () => {
  
   const [searchVoucher, setSearchVoucher] = useState();
   const [isVoucher, setIsVoucher] = useState(false);
+
+  const [checked, setChecked] = useState(true);
+
+const handleChange = (e) => {
+  setChecked(e.target.checked);
+};
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -139,7 +148,17 @@ const HomePage = () => {
               
               </div>
           </form>
+          <div style={{'margin': '20px'}}>
+            <label>Used Voucher</label>
+            <Checkbox
+              checked={checked}
+              onChange={handleChange}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+          </div>
+          
       </div>
+      
   </div>
   : null
     }
