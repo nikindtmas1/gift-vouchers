@@ -20,11 +20,11 @@ const HomePage = () => {
   const [searchVoucher, setSearchVoucher] = useState();
   const [isVoucher, setIsVoucher] = useState(false);
 
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
 
-const handleChange = (e) => {
-  setChecked(e.target.checked);
-};
+    const handleChange = (e) => {
+      setChecked(e.target.checked);
+    };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +37,9 @@ const handleChange = (e) => {
       
       let foundVoucher = vouchers.filter((x) => x.numVoucher === Number(numberVoucher));
      
+      if(foundVoucher[0].checked === true){
+        setChecked(true);
+      }
       setSearchVoucher(foundVoucher[0]);
 
       setIsVoucher(true)
@@ -59,11 +62,12 @@ const handleChange = (e) => {
     let validDate = formData.get('validDate').trim();
     let typeTransaction = formData.get('typeTransaction').trim();
     let usedDate = formData.get('usedDate').trim();
+    
     let email = formData.get('email').trim();
 
     let data = {date, numVoucher, nameBuyer, nameOwn, nameEmployee,
-       treatment, count, price, validDate, typeTransaction, usedDate, email};
-     console.log(data);
+       treatment, count, price, validDate, typeTransaction, usedDate, checked, email};
+     
     services.editVoucher(searchVoucher._id, data)
     .then(() => {history.push('/')})
     .catch(error => alert(error.message))
@@ -147,7 +151,7 @@ const handleChange = (e) => {
               </div>
               
               </div>
-          </form>
+          
           <div style={{'margin': '20px'}}>
             <label>Used Voucher</label>
             <Checkbox
@@ -156,7 +160,7 @@ const handleChange = (e) => {
               inputProps={{ 'aria-label': 'controlled' }}
             />
           </div>
-          
+          </form>
       </div>
       
   </div>
