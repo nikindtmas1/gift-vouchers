@@ -20,11 +20,12 @@ const CreatePage = () => {
         let validDate = formData.get("validDate").trim();
         let typeTransaction = formData.get("typeTransaction").trim();
         let usedDate = formData.get("usedDate").trim();
+        let checked = false;
         let email = formData.get("email").trim();
 
         const data = { date, numVoucher, nameBuyer, nameOwn,
             nameEmployee, treatment, count, price, validDate,
-            typeTransaction, usedDate, email }
+            typeTransaction, usedDate, checked, email }
 
         services.createVoucher(data)
             .then(history.push('/home'))
