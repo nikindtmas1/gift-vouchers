@@ -13,6 +13,7 @@ const voucherSchema = new mongoose.Schema({
     validDate: String,
     typeTransaction: String,
     usedDate: String,
+    checked: Boolean,
     email: String
 });
 
