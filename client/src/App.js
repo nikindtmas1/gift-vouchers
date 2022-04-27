@@ -26,7 +26,7 @@ function App() {
     .catch(err => alert(err.message))
   },[]);
 
-  console.log(vouchers);
+ 
   return (
     <AuthCtx.Provider value={{vouchers}}>
     <div className="">
