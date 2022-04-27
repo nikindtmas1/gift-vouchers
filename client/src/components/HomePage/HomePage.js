@@ -17,6 +17,7 @@ const HomePage = () => {
 
   const history = useHistory();
  
+ 
   const [searchVoucher, setSearchVoucher] = useState();
   const [isVoucher, setIsVoucher] = useState(false);
 
@@ -40,6 +41,11 @@ const HomePage = () => {
       if(foundVoucher[0].checked === true){
         setChecked(true);
       }
+
+      //window.scrollTo(0, 0);
+      window.scroll(10, 100)
+      
+   
       setSearchVoucher(foundVoucher[0]);
 
       setIsVoucher(true)
