@@ -1,7 +1,23 @@
-import React from 'react'
+import {useContext,useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 
-export const Logout = () => {
-  return (
-    <div>Logout</div>
-  )
-}
+import * as authService from '../Services/data';
+import AuthCtx from '../../contexts/AuthCtx';
+
+const Logout = () => {
+
+  let {onLogout} = useContext(AuthCtx);
+
+  let history = useHistory();
+
+  useEffect(() => {
+      authService.logout()
+        .then(() => {
+          onLogout()
+          history.push('/')
+        })
+    }, []);
+    return null;
+};
+
+export default Logout;
