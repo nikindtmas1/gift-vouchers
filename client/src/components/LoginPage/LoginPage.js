@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {useHistory} from 'react-router-dom';
 
 import * as services from '../Services/data';
+import AuthCtx from '../../contexts/AuthCtx';
 
 const LoginPage = () => {
+
+  const {onLogin} = useContext(AuthCtx);
+  const history = useHistory();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -21,11 +26,11 @@ const LoginPage = () => {
     }
 
     services.login(username, password)
-        .then(() => {
-          console.log('is ok');
+        .then(logData => {
+          onLogin(logData);
         })
         .catch(error => console.log(error))
-        // history.push('/');
+        history.push('/home');
 
   }
 
