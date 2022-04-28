@@ -11,6 +11,7 @@ import CreatePage from "./components/CreatePage/CreatePage";
 //import CreateTwo from './components/CreatePage/CreateTwo';
 import SearchPage from './components/SearchPage/SearchPage';
 import LoginPage from "./components/LoginPage/LoginPage";
+import Logout from './components/Logout/Logout';
 import Dashboard from './components/Dashboard/Dashboard';
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
@@ -51,9 +52,18 @@ function App() {
       userId: id,
     })
   };
+
+  const onLogout = () => {
+    setUserInfo({
+      isAuthenticated: false,
+      user: null,
+      userId: null
+    })
+
+  };
  
   return (
-    <AuthCtx.Provider value={{vouchers, user: userInfo, onLogin}}>
+    <AuthCtx.Provider value={{vouchers, user: userInfo, onLogin, onLogout}}>
     <div className="">
       <header className="">
           <Navigation />
@@ -64,6 +74,7 @@ function App() {
           <Route path='/home'  component={HomePage} />
           <Route path='/create' component={CreatePage} />
           <Route path='/login' component={LoginPage} />
+          <Route path='/logout' component={Logout} />
           <Route path='/search' component={SearchPage} />
         </Switch>
           {/* <CreatePage /> */}
