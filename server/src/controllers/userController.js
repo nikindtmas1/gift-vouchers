@@ -28,4 +28,19 @@ router.post('/refresh', async (req, res) => {
     });
   });
 
+  router.get('/logout', (req, res) => {
+    res.json({ ok: true });
+  });
+  
+  router.post('/refresh', async (req, res) => {
+    console.log(req.body);
+    let refreshToken = req.body.refreshToken;
+  
+    let { accessToken, refreshToken: newRefreshToken } = await services.refresh(refreshToken);
+  
+    res.json({
+        accessToken,
+        refreshToken: newRefreshToken,
+    });
+  });
 module.exports = router;
