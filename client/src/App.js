@@ -21,6 +21,8 @@ function App() {
   
   const [vouchers, setVaouchers] = useState([]);
   const [userInfo, setUserInfo] = useState({ isAuthenticated: false, username: '', userId: '' });
+  const [isAuth, setIsAuth] = useState(false);
+
 
   useEffect(() => {
 
@@ -39,7 +41,9 @@ function App() {
       isAuthenticated: Boolean(user),
       user: user,
       userId: id,
-    })
+    });
+
+    
   }, []);
 
   const onLogin = (userData) => {
@@ -50,7 +54,9 @@ function App() {
       user: user,
       isAuthenticated: true,
       userId: id,
-    })
+    });
+
+    setIsAuth(true);
   };
 
   const onLogout = () => {
@@ -58,7 +64,9 @@ function App() {
       isAuthenticated: false,
       user: null,
       userId: null
-    })
+    });
+
+    setIsAuth(false);
 
   };
  
@@ -69,14 +77,25 @@ function App() {
           <Navigation />
       </header>
       <div className='mainpage'>
+        {isAuth ?
         <Switch>
-          <Route path='/' exact component={Dashboard} />
-          <Route path='/home'  component={HomePage} />
-          <Route path='/create' component={CreatePage} />
-          <Route path='/login' component={LoginPage} />
-          <Route path='/logout' component={Logout} />
-          <Route path='/search' component={SearchPage} />
-        </Switch>
+        {/* <Route path='/' exact component={Dashboard} /> */}
+        <Route path='/home'  component={HomePage} />
+        <Route path='/create' component={CreatePage} />
+        {/* <Route path='/login' component={LoginPage} /> */}
+        <Route path='/logout' component={Logout} />
+        <Route path='/search' component={SearchPage} />
+      </Switch>
+      : <Switch>
+      <Route path='/' exact component={Dashboard} />
+      {/* <Route path='/home'  component={HomePage} /> */}
+      {/* <Route path='/create' component={CreatePage} /> */}
+      <Route path='/login' component={LoginPage} />
+      {/* <Route path='/logout' component={Logout} /> */}
+      {/* <Route path='/search' component={SearchPage} /> */}
+    </Switch>
+      }
+        
           {/* <CreatePage /> */}
       
       </div>
