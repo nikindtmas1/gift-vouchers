@@ -1,5 +1,6 @@
 const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
+//const bcrypt = require('bcrypt');
 
 exports.login = async ({username, password}) => {
 
@@ -22,7 +23,7 @@ exports.login = async ({username, password}) => {
 
         // }
         
-        let accessToken = jwt.sign({_id: user._id, username: user.username}, 'MOGYSHTSECRET', { expiresIn: '1m' });
+        let accessToken = jwt.sign({_id: user._id, username: user.username, roles: user.roles}, 'MOGYSHTSECRET', { expiresIn: '1m' });
         let refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
         
         user.refreshToken = refreshToken;
@@ -30,7 +31,7 @@ exports.login = async ({username, password}) => {
         await user.save();
 
         return { user, accessToken, refreshToken };
-        
+
     }else{
         throw new Error('No such user');
     }
