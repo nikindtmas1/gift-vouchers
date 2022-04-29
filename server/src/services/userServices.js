@@ -6,6 +6,22 @@ exports.login = async ({username, password}) => {
     let user = await User.findOne({username, password});
 
     if(user){
+        // const valide = await bcrypt.compare(password, user.password);
+        // if(!valide) throw new Error('Invalid username or password!');
+
+        // if(valide){
+
+        // let accessToken = jwt.sign({_id: user._id, username: user.username}, 'MOGYSHTSECRET', { expiresIn: '1m' });
+        // let refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
+        
+        // user.refreshToken = refreshToken;
+
+        // await user.save();
+
+        // return { user, accessToken, refreshToken };
+
+        // }
+        
         let accessToken = jwt.sign({_id: user._id, username: user.username}, 'MOGYSHTSECRET', { expiresIn: '1m' });
         let refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
         
