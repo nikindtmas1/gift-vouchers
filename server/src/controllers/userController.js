@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const services = require('../services/userServices');
+const auth = require('../middleware/authMidd');
+const roles = require('../middleware/roles');
 
 router.post('/login', async (req, res) => {
     let {username, password} = req.body;
