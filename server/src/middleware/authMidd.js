@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
     const token = req.header('x-auth-token');
+  
     if(!token) return res.status(401).send({
         ok: true,
         error: 'Access denied. No token provided'
@@ -9,13 +10,15 @@ module.exports = (req, res, next) => {
 
     console.log(token);
 
-    // try {
-    //     const decoded = jwt.verify(token, 'MOGYSHTSECRET')
+    try {
+        const decoded = jwt.verify(token, 'MOGYSHTSECRET')
         
-    // } catch (error) {
-    //     return res.status(401).send({
-    //         ok: false,
-    //         error: "Token expired"
-    //     });
-    // }
+    } catch (error) {
+        return res.status(401).send({
+            ok: false,
+            error: "Token expired"
+        });
+    }
+
+    next();
 }
