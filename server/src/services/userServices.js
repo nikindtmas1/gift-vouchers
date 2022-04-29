@@ -4,26 +4,25 @@ const jwt = require('jsonwebtoken');
 
 exports.login = async ({username, password}) => {
 
+    
     let user = await User.findOne({username, password});
 
     if(user){
-        // const valide = await bcrypt.compare(password, user.password);
-        // if(!valide) throw new Error('Invalid username or password!');
-
-        // if(valide){
-
-        // let accessToken = jwt.sign({_id: user._id, username: user.username}, 'MOGYSHTSECRET', { expiresIn: '1m' });
-        // let refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
         
-        // user.refreshToken = refreshToken;
+        // const saltPass = 9;
+        // const myPass = '@NikiN240424';
+        // bcrypt.genSalt(saltPass, (err, salt) => {
+        //     bcrypt.hash(myPass, salt, (err, hash) => {
+        //         console.log(hash)
+               
+        //     });
+        // });
+        // const hashPass = '$2b$09$Lk7bxzhn0bTUEWRUxu9Q8ODbrQjipzpgQlSv88VUSJO5PJESpDn4.'
+        // const valide = await bcrypt.compare(password, hashPass);
+        //if(!valide) throw new Error('Invalid username or password!');
+   
 
-        // await user.save();
-
-        // return { user, accessToken, refreshToken };
-
-        // }
-        
-        let accessToken = jwt.sign({_id: user._id, username: user.username, roles: user.roles}, 'MOGYSHTSECRET', { expiresIn: '1m' });
+        let accessToken = jwt.sign({_id: user._id, username: user.username}, 'MOGYSHTSECRET', { expiresIn: '1m' });
         let refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
         
         user.refreshToken = refreshToken;
@@ -31,6 +30,17 @@ exports.login = async ({username, password}) => {
         await user.save();
 
         return { user, accessToken, refreshToken };
+
+       
+        
+        // let accessToken = jwt.sign({_id: user._id, username: user.username, roles: user.roles}, 'MOGYSHTSECRET', { expiresIn: '1m' });
+        // let refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
+        
+        // user.refreshToken = refreshToken;
+
+        // await user.save();
+
+        // return { user, accessToken, refreshToken };
 
     }else{
         throw new Error('No such user');
