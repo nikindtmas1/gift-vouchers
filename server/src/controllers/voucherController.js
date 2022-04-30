@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const voucherService = require('../services/voucherServices');
+const auth = require('../middleware/authMidd');
+const roles = require('../middleware/roles');
 
 // router.get('/', (req, res) => {
 //     res.json({text: 'It is working!'})
