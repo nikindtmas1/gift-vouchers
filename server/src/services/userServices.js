@@ -4,10 +4,10 @@ const bcrypt = require('bcrypt');
 
 exports.login = async ({username, password}) => {
 
-    let currUser = username;
-    let currPass = password;
+    const currUser = username;
+    const currPass = password;
 
-    let user = await User.findOne({currUser});
+    const user = await User.findOne({currUser});
     if(!user) throw new Error('Invalid username!')
     const valide = await bcrypt.compare(currPass, user.password);
     if(!valide) throw new Error('Invalid password!');
@@ -25,8 +25,8 @@ exports.login = async ({username, password}) => {
         // });
         //const hashPass = '$2b$09$Lk7bxzhn0bTUEWRUxu9Q8ODbrQjipzpgQlSv88VUSJO5PJESpDn4.'
         
-            let accessToken = jwt.sign({_id: user._id, username: user.username}, 'MOGYSHTSECRET', { expiresIn: '60m' });
-            let refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
+            const accessToken = jwt.sign({_id: user._id, username: user.username}, 'MOGYSHTSECRET', { expiresIn: '60m' });
+            const refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
             
             user.refreshToken = refreshToken;
     
