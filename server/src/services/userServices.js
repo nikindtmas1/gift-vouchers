@@ -12,7 +12,7 @@ exports.login = async ({username, password}) => {
     const valide = await bcrypt.compare(currPass, user.password);
     if(!valide) throw new Error('Invalid password!');
     //let user = await User.findOne({username, password});
-    console.log(valide);
+  
     if(user.username === currUser){
         
         // const saltPass = 9;
@@ -25,9 +25,6 @@ exports.login = async ({username, password}) => {
         // });
         //const hashPass = '$2b$09$Lk7bxzhn0bTUEWRUxu9Q8ODbrQjipzpgQlSv88VUSJO5PJESpDn4.'
         
-        
-   
-     
             let accessToken = jwt.sign({_id: user._id, username: user.username}, 'MOGYSHTSECRET', { expiresIn: '1m' });
             let refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
             
@@ -37,10 +34,7 @@ exports.login = async ({username, password}) => {
     
             return { user, accessToken, refreshToken };
         
-    
 
-       
-        
         // let accessToken = jwt.sign({_id: user._id, username: user.username, roles: user.roles}, 'MOGYSHTSECRET', { expiresIn: '1m' });
         // let refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
         
