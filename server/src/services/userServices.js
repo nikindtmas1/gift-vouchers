@@ -53,13 +53,13 @@ exports.login = async ({username, password}) => {
 };
 
 exports.refresh = async (refreshToken) => {
-    const { _id } = jwt.verify(refreshToken, 'MOGYSHTSECRET2');
+    const { _id } = jwt.verify(refreshToken, 'mnogoqkaparola2');
 
     const user = await User.find({ _id, refreshToken });
 
     if (user) {
-        const accessToken = jwt.sign({ _id: user._id, username: user.username }, 'MOGYSHTSECRET', { expiresIn: '1m' });
-        const refreshToken = jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
+            const accessToken = createAccessToken(user);
+            const refreshToken = createRefreshToken(user);
 
         return { accessToken, refreshToken };
     } else {
