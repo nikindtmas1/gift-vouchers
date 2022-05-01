@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 const services = require('../services/userServices');
+const { isAuth, isGuest } = require('../middleware/authMidd');
 
 
-router.post('/login', async (req, res) => {
+router.post('/login',isGuest, async (req, res) => {
     let {username, password} = req.body;
 
     let { user, accessToken, refreshToken } = await services.login({username, password});
