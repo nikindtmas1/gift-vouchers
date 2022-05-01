@@ -30,6 +30,7 @@ function auth(req, res, next) {
 };
 
 function isAuth(req, res, next){
+   
     if(!req.user){
         return res.status(401)
     };
@@ -38,6 +39,7 @@ function isAuth(req, res, next){
 };
 
 function isGuest(req, res, next) {
+   
     if(!req.user){
         next();
     };
