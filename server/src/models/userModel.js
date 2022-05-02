@@ -8,6 +8,10 @@ const userModel = new mongoose.Schema({
     password: {
         type: String,
         required: [true, 'Password is required!']
+    },
+    roles: {
+        type: String,
+        required: [true, 'Roles is required']
     }
 });
 
