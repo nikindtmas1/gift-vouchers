@@ -27,15 +27,18 @@ exports.login = async ({username, password}) => {
         //const hashPass = '$2b$09$Lk7bxzhn0bTUEWRUxu9Q8ODbrQjipzpgQlSv88VUSJO5PJESpDn4.'
         
             const accessToken = createAccessToken(user);
-            const refreshToken = createRefreshToken(user);
+            //const refreshToken = createRefreshToken(user);
             //const accessToken = jwt.sign({_id: user._id, username: user.username}, 'MOGYSHTSECRET', { expiresIn: '60m' });
-            //const refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
+            const refreshToken = await jwt.sign({ _id: user._id }, 'MOGYSHTSECRET2', { expiresIn: '1d' });
             
             user.refreshToken = refreshToken;
+            const userRoles = user.roles;
+            user.roles = userRoles;
+           console.log(userRoles);
     
             await user.save();
     
-            return { user, accessToken, refreshToken };
+            return { user, accessToken, refreshToken, userRoles };
         
 
         // let accessToken = jwt.sign({_id: user._id, username: user.username, roles: user.roles}, 'MOGYSHTSECRET', { expiresIn: '1m' });
