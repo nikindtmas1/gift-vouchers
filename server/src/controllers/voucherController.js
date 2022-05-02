@@ -22,7 +22,7 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-
+   
     await voucherService.createVoucher({...req.body});
     res.json({ok: true})
 
