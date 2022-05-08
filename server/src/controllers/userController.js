@@ -8,13 +8,14 @@ const { isAuth, isGuest } = require('../middleware/authMidd');
 router.post('/login',isGuest, async (req, res) => {
     let {username, password} = req.body;
 
-    let { user, accessToken, refreshToken } = await services.login({username, password});
+    let { user, accessToken, refreshToken, userRoles } = await services.login({username, password});
 
     res.json({
         _id: user._id,
         username: user.username,
         accessToken,
         refreshToken,
+        userRoles: userRoles
     });
 });
 
