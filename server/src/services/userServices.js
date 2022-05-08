@@ -17,7 +17,7 @@ exports.login = async ({username, password}) => {
     if(user.username === currUser){
         
         // const saltPass = 9;
-        // const myPass = '@NikiN240424';
+        // const myPass = 'niki548444';
         // bcrypt.genSalt(saltPass, (err, salt) => {
         //     bcrypt.hash(myPass, salt, (err, hash) => {
         //         console.log(hash)
@@ -25,7 +25,7 @@ exports.login = async ({username, password}) => {
         //     });
         // });
         //const hashPass = '$2b$09$Lk7bxzhn0bTUEWRUxu9Q8ODbrQjipzpgQlSv88VUSJO5PJESpDn4.'
-        
+        //const secHash = '$2b$09$0FOD03o/A.AKOyyc05CgkeZeSh.148N6lJGHrGBLhjSVIPNKO8HCi'
             const accessToken = createAccessToken(user);
             //const refreshToken = createRefreshToken(user);
             //const accessToken = jwt.sign({_id: user._id, username: user.username}, 'MOGYSHTSECRET', { expiresIn: '60m' });
