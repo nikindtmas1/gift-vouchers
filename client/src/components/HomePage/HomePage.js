@@ -14,6 +14,7 @@ const HomePage = () => {
 
   let value = useContext(AuthCtx);
   let vouchers = value.vouchers;
+  let roles = value.user.userRoles;
 
   const history = useHistory();
  
@@ -150,11 +151,14 @@ const HomePage = () => {
                       <div className="form-group"> <label for="form_lastname">Email *</label><fieldset> <input id="form_lastname" type="email" name="email" className="form-control" defaultValue={searchVoucher.email} placeholder="Please enter your email *" required="required" data-error="Valid email is required." /></fieldset> </div>
                   </div>
               </div>
-              <div className="row">       
-                  <div className="col-md-12">
-                       <input type="submit" className="btnSearch" value="Edit" /> 
-                  </div>
-              </div>
+              {roles === 'admin' ?
+               <div className="row">       
+               <div className="col-md-12">
+                    <input type="submit" className="btnSearch" value="Edit" /> 
+               </div>
+           </div>
+            :null}
+             
               
               </div>
           
