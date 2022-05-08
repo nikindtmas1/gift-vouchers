@@ -20,7 +20,7 @@ import Footer from "./components/Footer/Footer";
 function App() {
   
   const [vouchers, setVaouchers] = useState([]);
-  const [userInfo, setUserInfo] = useState({ isAuthenticated: false, username: '', userId: '' });
+  const [userInfo, setUserInfo] = useState({ isAuthenticated: false, username: '', userId: '', userRoles: '' });
   const [isAuth, setIsAuth] = useState(false);
 
 
@@ -35,12 +35,14 @@ function App() {
     let userData = userServices.getUser();
     let user = userData.username;
     let id = userData.userId;
+    let userRoles = userData.userRoles;
 
 
     setUserInfo({
       isAuthenticated: Boolean(user),
       user: user,
       userId: id,
+      userRoles: userRoles,
     });
 
     
@@ -50,10 +52,12 @@ function App() {
 
     let user = userData.username;
     let id = userData._id;
+    let userRoles = userData.userRoles;
     setUserInfo({
       user: user,
       isAuthenticated: true,
       userId: id,
+      userRoles: userRoles,
     });
 
     setIsAuth(true);
@@ -63,7 +67,8 @@ function App() {
     setUserInfo({
       isAuthenticated: false,
       user: null,
-      userId: null
+      userId: null,
+      userRoles: null,
     });
 
     setIsAuth(false);
