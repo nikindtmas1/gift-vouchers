@@ -34,7 +34,6 @@ exports.login = async ({username, password}) => {
             user.refreshToken = refreshToken;
             const userRoles = user.roles;
             user.roles = userRoles;
-           console.log(userRoles);
     
             await user.save();
     
