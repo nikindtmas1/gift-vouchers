@@ -8,7 +8,8 @@ exports.login = async ({username, password}) => {
     const currUser = username;
     const currPass = password;
 
-    const user = await User.findOne({currUser});
+    const user = await User.findByUsername(currUser);
+   
     if(!user) throw new Error('Invalid username!')
     const valide = await bcrypt.compare(currPass, user.password);
     if(!valide) throw new Error('Invalid password!');
@@ -25,7 +26,7 @@ exports.login = async ({username, password}) => {
         //     });
         // });
         //const hashPass = '$2b$09$Lk7bxzhn0bTUEWRUxu9Q8ODbrQjipzpgQlSv88VUSJO5PJESpDn4.'
-        //const secHash = '$2b$09$0FOD03o/A.AKOyyc05CgkeZeSh.148N6lJGHrGBLhjSVIPNKO8HCi'
+        //const secHash = '$2b$09$L.Qotph6f7plVzOERix7IuwjJYdaXVytQzBNYU53NH6E5.RaTiOFq'
             const accessToken = createAccessToken(user);
             //const refreshToken = createRefreshToken(user);
             //const accessToken = jwt.sign({_id: user._id, username: user.username}, 'MOGYSHTSECRET', { expiresIn: '60m' });
