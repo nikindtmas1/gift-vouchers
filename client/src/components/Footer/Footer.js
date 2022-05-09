@@ -2,7 +2,12 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='footer'>Footer</div>
+    <div className='footer'>
+      <div className='inner-footer'>
+
+      Gift Cart App
+      </div>
+    </div>
   )
 }
 
