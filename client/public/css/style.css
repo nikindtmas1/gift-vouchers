@@ -79,6 +79,11 @@ label {
   color: aliceblue;
 }
 
+.inner-footer {
+  margin-left: 10px;
+  text-justify: inherit;
+}
+
 .homeimg img{
     display: block;
     /* margin-right: 10px; */
