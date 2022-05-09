@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { development } = require('../config/config');
-const secretStr = development.secret;
+const secretAcces = development.secretOne;
+const secretRefresh = development.secretTwo;
 
 function createAccessToken(user) {
 
@@ -13,7 +14,7 @@ function createAccessToken(user) {
         expiresIn: '2d'
     };
 
-    let accessToken = jwt.sign(payload, secretStr, options);
+    let accessToken = jwt.sign(payload, secretAcces, options);
 
     return accessToken;
     
@@ -25,13 +26,13 @@ async function createRefreshToken(user) {
         _id: user._id
     };
 
-    let secretStrTwo = 'mnogoqkaparola2';
+    //let secretStrTwo = 'mnogoqkaparola2';
 
     let options = {
         expiresIn: '2d'
     };
 
-   let refreshToken = await jwt.sign(payload, secretStrTwo, options);
+   let refreshToken = await jwt.sign(payload, secretRefresh, options);
 
    return refreshToken;
 }
