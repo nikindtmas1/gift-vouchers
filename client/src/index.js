@@ -5,7 +5,6 @@ import App from './App';
 
 const container = document.getElementById("root");
 
-// create a root
 //const root = ReactDOM.createRoot(container);
 const root = ReactDOM.createRoot(container);
 
