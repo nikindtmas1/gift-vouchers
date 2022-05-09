@@ -77,7 +77,7 @@ function App() {
  
   return (
     <AuthCtx.Provider value={{vouchers, user: userInfo, onLogin, onLogout}}>
-    <div id="app">
+    <div className="">
       <header className="">
           <Navigation />
       </header>
