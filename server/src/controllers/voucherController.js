@@ -16,8 +16,8 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-
-    let result = await voucherService.getOneVoucher(req.params.id);
+    let result = await voucherService.getVoucherByNumber(req.params.id)
+    //let result = await voucherService.getOneVoucher(req.params.id);
     res.json(result);
 });
 
