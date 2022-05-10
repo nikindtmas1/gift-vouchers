@@ -37,8 +37,8 @@ const HomePage = () => {
 
 
     if(numberVoucher !== '' && numberVoucher !== undefined){
-      let currentVoucher = services.getByNumber(numberVoucher);
-      console.log(currentVoucher);
+      // let currentVoucher = services.getByNumber(Number(numberVoucher));
+      // console.log(currentVoucher);
       let foundVoucher = vouchers.filter((x) => x.numVoucher === Number(numberVoucher));
      
       if(foundVoucher[0].checked === true){
