@@ -37,19 +37,22 @@ const HomePage = () => {
 
 
     if(numberVoucher !== '' && numberVoucher !== undefined){
-      // let currentVoucher = services.getByNumber(Number(numberVoucher));
-      // console.log(currentVoucher);
-      let foundVoucher = vouchers.filter((x) => x.numVoucher === Number(numberVoucher));
+      let currentVoucher = services.getByNumber(numberVoucher);
+      //let currentVoucher = services.getOneVoucher('62569a612cc16e47e10c572e')
+      console.log(currentVoucher);
+      //let foundVoucher = vouchers.filter((x) => x.numVoucher === Number(numberVoucher));
      
-      if(foundVoucher[0].checked === true){
+      // if(foundVoucher[0].checked === true){
+      //   setChecked(true);
+      // }
+      if(currentVoucher.checked === true){
         setChecked(true);
       }
-
       //window.scrollTo(0, 0);
       window.scroll(10, 100)
       
-   
-      setSearchVoucher(foundVoucher[0]);
+      //foundVoucher[0]
+      setSearchVoucher(currentVoucher);
 
       setIsVoucher(true)
       
