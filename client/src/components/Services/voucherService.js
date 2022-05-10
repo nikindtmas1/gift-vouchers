@@ -38,7 +38,7 @@ function getOption(method = 'get', body) {
     }
 
     const token = sessionStorage.getItem('authToken');
-
+  
     // if (token != null) {
     //'X-Authorization' = token
     //     options.headers['X-Parse-Session-Token'] = token;
@@ -74,7 +74,7 @@ export async function login(username, password) {
     const result = await post(settings.host + '/users/login', { username, password });
 
     sessionStorage.setItem('username', result.username);
-    //sessionStorage.setItem('authToken', result.accessToken);
+    sessionStorage.setItem('authToken', result.accessToken);
     //sessionStorage.setItem('refreshToken', result.refreshToken);
     sessionStorage.setItem('userId', result._id);
     sessionStorage.setItem('userRoles', result.userRoles);
@@ -97,7 +97,7 @@ export async function logout(token) {
     const result = await get(settings.host + '/users/logout');
 
     sessionStorage.removeItem('username');
-    //sessionStorage.removeItem('authToken');
+    sessionStorage.removeItem('authToken');
     //sessionStorage.removeItem('refreshToken');
     sessionStorage.removeItem('userId');
     sessionStorage.removeItem('userRoles');
