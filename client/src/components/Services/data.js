@@ -20,6 +20,11 @@ export async function getOneVoucher(id){
     return result;
 };
 
+export async function getByNumber(number){
+    let result = await service.get(host + `/vouchers/${number}`);
+    return result;
+}
+
 export async function editVoucher(id, data){
     const response = await service.put(host + `/vouchers/${id}`, data);
     return response;
