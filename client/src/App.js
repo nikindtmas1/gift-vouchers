@@ -3,7 +3,7 @@ import {useState ,useEffect} from 'react';
 
 import AuthCtx from './contexts/AuthCtx';
 
-import * as services from './components/Services/data';
+//import * as services from './components/Services/data';
 import * as userServices from './components/Services/authService';
 
 import HomePage from './components/HomePage/HomePage';
@@ -19,17 +19,17 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   
-  const [vouchers, setVaouchers] = useState([]);
+  //const [vouchers, setVaouchers] = useState([]);
   const [userInfo, setUserInfo] = useState({ isAuthenticated: false, username: '', userId: '', userRoles: '' });
   const [isAuth, setIsAuth] = useState(false);
 
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    services.getAll()
-    .then((result) => setVaouchers(result))
-    .catch(err => alert(err.message))
-  },[]);
+  //   services.getAll()
+  //   .then((result) => setVaouchers(result))
+  //   .catch(err => alert(err.message))
+  // },[]);
 
   useEffect(() => {
     let userData = userServices.getUser();
@@ -76,7 +76,7 @@ function App() {
   };
  
   return (
-    <AuthCtx.Provider value={{vouchers, user: userInfo, onLogin, onLogout}}>
+    <AuthCtx.Provider value={{ user: userInfo, onLogin, onLogout}}>
     <div className="">
       <header className="">
           <Navigation />
