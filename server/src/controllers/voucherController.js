@@ -22,10 +22,10 @@ router.get('/:id', async (req, res) => {
 });
 
 router.get('/:number', async (req, res) => {
-    console.log(req.params.id);
-    let result = await voucherService.getVoucherByNumber(req.params.id);
-    console.log(result);
-    res.json(result);
+    console.log(req.params);
+    // let result = await voucherService.getVoucherByNumber(req.params.id);
+    // console.log(result);
+    // res.json(result);
 });
 
 router.post('/', async (req, res) => {
