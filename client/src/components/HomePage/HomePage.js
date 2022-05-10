@@ -13,7 +13,7 @@ import * as services from '../Services/data';
 const HomePage = () => {
 
   let value = useContext(AuthCtx);
-  let vouchers = value.vouchers;
+  //let vouchers = value.vouchers;
   let roles = value.user.userRoles;
 
   const history = useHistory();
@@ -28,7 +28,7 @@ const HomePage = () => {
       setChecked(e.target.checked);
     };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     let formData = new FormData(e.currentTarget);
@@ -37,17 +37,22 @@ const HomePage = () => {
 
 
     if(numberVoucher !== '' && numberVoucher !== undefined){
-      let currentVoucher = services.getByNumber(numberVoucher);
+      let currentVoucher = await services.getByNumber(numberVoucher)
+      // .then((result) => setSearchVoucher(result))
+      // .then(() => searchVoucher.checked === true ? setChecked(true) : null)
+      // .then(() => console.log(searchVoucher))
       //let currentVoucher = services.getOneVoucher('62569a612cc16e47e10c572e')
-      console.log(currentVoucher);
+      
       //let foundVoucher = vouchers.filter((x) => x.numVoucher === Number(numberVoucher));
      
       // if(foundVoucher[0].checked === true){
       //   setChecked(true);
       // }
+
       if(currentVoucher.checked === true){
         setChecked(true);
       }
+
       //window.scrollTo(0, 0);
       window.scroll(10, 100)
       
