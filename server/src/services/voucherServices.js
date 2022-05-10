@@ -8,7 +8,7 @@ const createVoucher = (data) => Voucher.create(data);
 
 const updateVoucher = (id, voucherData) => Voucher.findByIdAndUpdate(id, voucherData);
 
-const getVoucherByNumber = (number) => Voucher.findByNumber(number);
+const getVoucherByNumber = (number) => Voucher.findByNumber(Number(number));
 
 module.exports = {
     getAllVouchers,
