@@ -15,13 +15,13 @@ export async function getAll(){
     return result;
 };
 
-export async function getOneVoucher(id){
-    let result = await service.get(host + `/vouchers/${id}`);
-    return result;
-};
+// export async function getOneVoucher(id){
+//     let result = await service.get(host + `/vouchers/${id}`);
+//     return result;
+// };
 
-export async function getByNumber(number){
-    let result = await service.get(host + `/vouchers/${number}`);
+export async function getByNumber(id){
+    let result = await service.get(host + `/vouchers/${id}`);
     return result;
 }
 
