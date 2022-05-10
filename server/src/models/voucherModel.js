@@ -53,4 +53,8 @@ const voucherSchema = new mongoose.Schema({
     }
 });
 
+voucherSchema.static('findByNumber', function(numVoucher){
+    return this.findOne({numVoucher})
+});
+
 module.exports = mongoose.model('Voucher', voucherSchema);
