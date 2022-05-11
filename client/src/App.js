@@ -53,11 +53,13 @@ function App() {
     let user = userData.username;
     let id = userData._id;
     let userRoles = userData.userRoles;
+    let authToken = userData.accessToken;
     setUserInfo({
       user: user,
       isAuthenticated: true,
       userId: id,
       userRoles: userRoles,
+      authToken: authToken,
     });
 
     setIsAuth(true);
