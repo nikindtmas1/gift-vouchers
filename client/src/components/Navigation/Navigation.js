@@ -53,6 +53,11 @@ const Navigation = () => {
           <Link to="/home">Home Page</Link>
         </li>
       </div>
+      <div className="navdiv">
+        <li className="navli">
+          <Link to="/lastVoucher">Last Voucher</Link>
+        </li>
+      </div>
       {roles === 'admin'?
        <div className="navdiv">
        <li className="navli">
