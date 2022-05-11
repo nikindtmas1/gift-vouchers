@@ -25,7 +25,11 @@ async function request(url, options) {
     }
 };
 
+
+
 function getOption(method = 'get', body) {
+    
+
 
     const options = {
         method,
@@ -45,6 +49,7 @@ function getOption(method = 'get', body) {
     // }
 
     if (body) {
+        
         options.headers['Content-Type'] = 'application/json';
         options.headers['X-Authorization'] = token;
         options.body = JSON.stringify(body);
@@ -75,7 +80,7 @@ export async function login(username, password) {
 
     sessionStorage.setItem('username', result.username);
     sessionStorage.setItem('authToken', result.accessToken);
-    //sessionStorage.setItem('refreshToken', result.refreshToken);
+    sessionStorage.setItem('refreshToken', result.refreshToken);
     sessionStorage.setItem('userId', result._id);
     sessionStorage.setItem('userRoles', result.userRoles);
 
@@ -98,7 +103,7 @@ export async function logout(token) {
 
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('authToken');
-    //sessionStorage.removeItem('refreshToken');
+    sessionStorage.removeItem('refreshToken');
     sessionStorage.removeItem('userId');
     sessionStorage.removeItem('userRoles');
 
