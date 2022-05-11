@@ -6,26 +6,40 @@ const LastVoucher = () => {
 
 
     const [vouchers, setVaouchers] = useState([]);
-    const [searchVoucher, setSearchVoucher] = useState();
+    const [searchVoucher, setSearchVoucher] = useState([]);
+    const [isVoucher, setIsVoucher] = useState(false);
 
      useEffect(() => {
 
     services.getAll()
     .then((result) => setVaouchers(result))
     .catch(err => alert(err.message))
-    },[]);
+    // const foundVoucher = vouchers.filter((x) => x.numVoucher === vouchers.length)
+    // setSearchVoucher(foundVoucher)
+    
+    },[null]);
 
+    useEffect(() => {
+        const foundVoucher = vouchers.filter((x) => x.numVoucher === vouchers.length)
+        setSearchVoucher(foundVoucher)
+        setIsVoucher(true)
+    },[null]);
+    //console.log(searchVoucher[0].date);
+    
     console.log(vouchers.length);
-    const foundVoucher = vouchers.filter((x) => x.numVoucher === vouchers.length)
-    console.log(foundVoucher[0]);
+    console.log(searchVoucher);
+    //const foundVoucher = vouchers.filter((x) => x.numVoucher === vouchers.length)
+    //console.log(foundVoucher[0].date);
 
-    if(foundVoucher){
-        console.log('ok');
-        //setSearchVoucher(foundVoucher[0])
-    }
+    // if(foundVoucher){
+    //     console.log('ok');
+    //     setSearchVoucher(foundVoucher[0]);
+    //     setIsVoucher(true);
+    // }
 
   return (
-    <div className='searchDiv'>
+      <div className='searchDiv'>
+      {isVoucher ?
         <div className='searchcontainer'>
             {/* <div className=" text-center mt-5 ">
                 <h1>Search Page</h1>
@@ -65,7 +79,9 @@ const LastVoucher = () => {
                 </div>
             </form>
         </div>
+    :null}
     </div>
+   
   )
 }
 
