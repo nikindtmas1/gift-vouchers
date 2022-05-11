@@ -18,7 +18,7 @@ exports.login = async ({username, password}) => {
     if(user.username === currUser){
         
         // const saltPass = 9;
-        // const myPass = 'niki548444';
+        // const myPass = 'spa123456';
         // bcrypt.genSalt(saltPass, (err, salt) => {
         //     bcrypt.hash(myPass, salt, (err, hash) => {
         //         console.log(hash)
