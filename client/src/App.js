@@ -12,6 +12,7 @@ import CreatePage from "./components/CreatePage/CreatePage";
 import SearchPage from './components/SearchPage/SearchPage';
 import LoginPage from "./components/LoginPage/LoginPage";
 import Logout from './components/Logout/Logout';
+import LastVoucher from './components/LastVoucher/LastVoucher';
 import Dashboard from './components/Dashboard/Dashboard';
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
@@ -92,6 +93,7 @@ function App() {
         {/* <Route path='/login' component={LoginPage} /> */}
         <Route path='/logout' component={Logout} />
         <Route path='/search' component={SearchPage} />
+        <Route path='/lastVoucher' component={LastVoucher} />
       </Switch>
       : <Switch>
       <Route path='/' exact component={Dashboard} />
