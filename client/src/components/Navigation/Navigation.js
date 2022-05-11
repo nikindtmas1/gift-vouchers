@@ -53,7 +53,7 @@ const Navigation = () => {
           <Link to="/home">Home Page</Link>
         </li>
       </div>
-      {roles === 'admin' ?
+      {roles === 'admin'?
        <div className="navdiv">
        <li className="navli">
          <Link to="/create">Create Page</Link>
@@ -61,6 +61,14 @@ const Navigation = () => {
      </div>
     : null
     }
+
+    {roles === 'editor' ?
+    <div className="navdiv">
+    <li className="navli">
+      <Link to="/create">Create Page</Link>
+    </li>
+  </div>
+    :null}
      
       {/* <div className="navdiv">
         <li className="navli">
