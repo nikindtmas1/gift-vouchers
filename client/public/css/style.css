@@ -411,3 +411,7 @@ input.search {
     display: inline-flex;
     background-color: #f8f9fa!important;
 } */
+
+.row-btn {
+  display:flex;
+}
