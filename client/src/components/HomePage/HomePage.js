@@ -162,14 +162,27 @@ const HomePage = () => {
                   </div>
               </div>
               {roles === 'admin' ?
-               <div className="row">       
-               <div className="col-md-12">
-                    <input type="submit" className="btnSearch" value="Edit" /> 
-               </div>
-           </div>
-            :null}
+               <div className="row-btn">       
+                  <div className="col-md-12">
+                    <div className='form-group'>
+                       <input type="submit" className="btnSearch" value="Edit" /> 
+                    </div>
+                    <div className='form-group'>
+                       <input type="submit" className="btnSearch" value="Delete" /> 
+                    </div>
+                  </div>
+                </div>
+              :null}
              
-              
+              {roles === 'editor' ?
+                  <div className="row-btn">       
+                  <div className="col-md-12">
+                    <div className='form-group'>
+                       <input type="submit" className="btnSearch" value="Edit" /> 
+                    </div>
+                  </div>
+                </div>
+              :null}
               </div>
           
           <div style={{'margin': '20px'}}>
