@@ -15,6 +15,7 @@ import Logout from './components/Logout/Logout';
 import LastVoucher from './components/LastVoucher/LastVoucher';
 import Dashboard from './components/Dashboard/Dashboard';
 import Navigation from "./components/Navigation/Navigation";
+import RegisterPage from './components/Register/RegisterPage';
 import Footer from "./components/Footer/Footer";
 
 
@@ -94,6 +95,7 @@ function App() {
         <Route path='/logout' component={Logout} />
         <Route path='/search' component={SearchPage} />
         <Route path='/lastVoucher' component={LastVoucher} />
+        <Route path='/register' component={RegisterPage} />
       </Switch>
       : <Switch>
       <Route path='/' exact component={Dashboard} />
