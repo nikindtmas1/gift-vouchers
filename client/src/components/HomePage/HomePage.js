@@ -189,7 +189,7 @@ const HomePage = () => {
             <label>Used Voucher</label>
             <Checkbox
               checked={checked}
-              onChange={roles === 'admin' ? handleChange : null}
+              onChange={roles === 'admin' || roles === 'editor' ? handleChange : null}
               inputProps={{ 'aria-label': 'controlled' }}
             />
           </div>
