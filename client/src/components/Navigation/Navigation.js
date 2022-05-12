@@ -6,9 +6,11 @@ import AuthCtx from '../../contexts/AuthCtx';
 const Navigation = () => {
 
   let value = useContext(AuthCtx);
-  //let user = value.user.user;
+  let user = value.user.user;
   let isAuth = value.user.isAuthenticated;
   let roles = value.user.userRoles;
+
+  console.log(user);
 
   let guest = (
 
@@ -92,7 +94,7 @@ const Navigation = () => {
           <Link to="/logout">Logout</Link>
         </li>
       </div>
-      <div></div>
+      <div><span style={{color: 'blue'}}>Welcome: {user}</span></div>
       <div></div>
       <div></div>
       </>
