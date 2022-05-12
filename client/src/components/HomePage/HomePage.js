@@ -92,6 +92,17 @@ const HomePage = () => {
   }
 
 
+  const onDelete = async (e) => {
+    
+    e.preventDefault();
+    try {
+      await services.deleteVoucher(searchVoucher._id)
+    } catch (error) {
+      alert(error.message)
+      throw error
+    }
+    
+  }
 
   return (
     <>
@@ -167,7 +178,7 @@ const HomePage = () => {
                     <div className='form-group'>
                        <input type="submit" className="btnSearch" value="Edit" /> 
                     </div>
-                    <div className='form-group'>
+                    <div className='form-group' onClick={onDelete}>
                        <input type="submit" className="btnSearch" value="Delete" /> 
                     </div>
                   </div>
