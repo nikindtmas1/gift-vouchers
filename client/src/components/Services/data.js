@@ -34,3 +34,6 @@ export async function createVoucher(data){
     return await service.post(host + '/vouchers', data);
 };
 
+export async function deleteVoucher(id){
+    return await service.del(host + `/vouchers/${id}`);
+}
