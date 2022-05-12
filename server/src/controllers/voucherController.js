@@ -41,4 +41,9 @@ router.put('/:id', async (req, res) => {
     res.json({ok: true});
 });
 
+router.delete('/:id', async (req, res) => {
+    await voucherService.deleteVoucher(req.params.id);
+    res.json({ok: true});
+});
+
 module.exports = router;
