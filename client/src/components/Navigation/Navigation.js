@@ -59,11 +59,18 @@ const Navigation = () => {
         </li>
       </div>
       {roles === 'admin'?
+        <>
        <div className="navdiv">
        <li className="navli">
-         <Link to="/create">Create Page</Link>
+         <Link to="/create">Create Voucher</Link>
        </li>
      </div>
+     <div className="navdiv">
+       <li className="navli">
+         <Link to="/register">Register</Link>
+       </li>
+     </div>
+     </>
     : null
     }
 
