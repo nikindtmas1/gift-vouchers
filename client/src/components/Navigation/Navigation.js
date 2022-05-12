@@ -10,7 +10,6 @@ const Navigation = () => {
   let isAuth = value.user.isAuthenticated;
   let roles = value.user.userRoles;
 
-  console.log(user);
 
   let guest = (
 
