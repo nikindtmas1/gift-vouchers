@@ -8,6 +8,8 @@ const createVoucher = (data) => Voucher.create(data);
 
 const updateVoucher = (id, voucherData) => Voucher.findByIdAndUpdate(id, voucherData);
 
+const deleteVoucher = (id) => Voucher.findByIdAndDelete(id);
+
 const getVoucherByNumber = (number) => Voucher.findByNumber(Number(number));
 
 module.exports = {
@@ -16,4 +18,5 @@ module.exports = {
     createVoucher,
     updateVoucher,
     getVoucherByNumber,
+    deleteVoucher,
 }
