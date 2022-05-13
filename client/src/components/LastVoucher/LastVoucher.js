@@ -12,7 +12,7 @@ const LastVoucher = () => {
       .getAll()
       .then((result) => setVaouchers(result))
       .catch((err) => alert(err.message));
-  }, [null]);
+  }, []);
 
   const onClick = (e) => {
     e.preventDefault();
