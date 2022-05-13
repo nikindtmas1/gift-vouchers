@@ -8,8 +8,9 @@ const onSubmit = async (e) => {
   let formData = new FormData(e.currentTarget);
   let username = formData.get('userName').trim();
   let password = formData.get('userPassword').trim();
+  let roles = formData.get('userRoles').trim();
 
-  if (username === "" || password === "") {
+  if (username === "" || password === "" || roles === "") {
     return alert("All fields are required!");
   };
 
@@ -18,7 +19,7 @@ const onSubmit = async (e) => {
   };
 
   try {
-   await services.register(username, password)
+   await services.register(username, password, roles)
   } catch (error) {
     alert(error.message);
     throw error;
@@ -37,7 +38,9 @@ const RegisterPage = () => {
       <input type="text" name='userName' placeholder="User name" />
       <label>PASSWORD</label>
       <input type="password" name='userPassword' placeholder="Min 6 charaters long" />
-      <button className='loginbutton' type="submit">LOGIN</button>
+      <label>ROLE</label>
+      <input type="text" name='userRoles' placeholder="Add role" />
+      <button className='loginbutton' type="submit">REGISTER</button>
       </form>
     </div>
     {/* <a href="https://twitter.com/prathkum">MADE BY PRATHAM</a> */}
