@@ -5,7 +5,7 @@ const host = 'http://localhost:5000';
 service.settings.host = host;
 
 export const login = service.login;
-// export const register = service.register;
+export const register = service.register;
 export const logout = service.logout;
 
 
