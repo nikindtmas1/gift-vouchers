@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+
 
 const userModel = new mongoose.Schema({
     username: {
@@ -14,6 +16,17 @@ const userModel = new mongoose.Schema({
         required: [true, 'Roles is required']
     }
 });
+
+// userModel.pre('save', function(next){
+//     bcrypt.genSalt(9, (err, salt) => {
+//         bcrypt.hash(this.password, salt)
+//         .then(hash => {
+//         this.password = hash;
+//         next();
+//         });
+//     })
+    
+// });
 
 userModel.static('findByUsername', function(username){
     return this.findOne({username});
