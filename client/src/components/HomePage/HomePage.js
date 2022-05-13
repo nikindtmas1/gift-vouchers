@@ -30,18 +30,25 @@ const HomePage = () => {
     let numberVoucher = formData.get("numVoucher");
 
     if (numberVoucher !== "" && numberVoucher !== undefined) {
-      let currentVoucher = await services.getByNumber(numberVoucher);
+      try {
+        let currentVoucher = await services.getByNumber(numberVoucher);
    
 
-      if (currentVoucher.checked === true) {
-        setChecked(true);
+        if (currentVoucher.checked === true) {
+          setChecked(true);
+        }
+  
+        window.scroll(10, 100);
+  
+        setSearchVoucher(currentVoucher);
+  
+        setIsVoucher(true);
+        
+      } catch (error) {
+        alert(error.message);
+        throw error;
       }
-
-      window.scroll(10, 100);
-
-      setSearchVoucher(currentVoucher);
-
-      setIsVoucher(true);
+     
     }
   };
 
