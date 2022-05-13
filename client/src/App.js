@@ -1,30 +1,32 @@
-import { Route, Switch } from 'react-router-dom';
-import {useState ,useEffect} from 'react';
+import { Route, Switch } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-import AuthCtx from './contexts/AuthCtx';
+import AuthCtx from "./contexts/AuthCtx";
 
 //import * as services from './components/Services/data';
-import * as userServices from './components/Services/authService';
+import * as userServices from "./components/Services/authService";
 
-import HomePage from './components/HomePage/HomePage';
+import HomePage from "./components/HomePage/HomePage";
 import CreatePage from "./components/CreatePage/CreatePage";
 //import CreateTwo from './components/CreatePage/CreateTwo';
-import SearchPage from './components/SearchPage/SearchPage';
+import SearchPage from "./components/SearchPage/SearchPage";
 import LoginPage from "./components/LoginPage/LoginPage";
-import Logout from './components/Logout/Logout';
-import LastVoucher from './components/LastVoucher/LastVoucher';
-import Dashboard from './components/Dashboard/Dashboard';
+import Logout from "./components/Logout/Logout";
+import LastVoucher from "./components/LastVoucher/LastVoucher";
+import Dashboard from "./components/Dashboard/Dashboard";
 import Navigation from "./components/Navigation/Navigation";
-import RegisterPage from './components/Register/RegisterPage';
+import RegisterPage from "./components/Register/RegisterPage";
 import Footer from "./components/Footer/Footer";
 
-
 function App() {
-  
   //const [vouchers, setVaouchers] = useState([]);
-  const [userInfo, setUserInfo] = useState({ isAuthenticated: false, username: '', userId: '', userRoles: '' });
+  const [userInfo, setUserInfo] = useState({
+    isAuthenticated: false,
+    username: "",
+    userId: "",
+    userRoles: "",
+  });
   const [isAuth, setIsAuth] = useState(false);
-
 
   // useEffect(() => {
 
@@ -39,19 +41,15 @@ function App() {
     let id = userData.userId;
     let userRoles = userData.userRoles;
 
-
     setUserInfo({
       isAuthenticated: Boolean(user),
       user: user,
       userId: id,
       userRoles: userRoles,
     });
-
-    
   }, []);
 
   const onLogin = (userData) => {
-
     let user = userData.username;
     let id = userData._id;
     let userRoles = userData.userRoles;
@@ -76,43 +74,44 @@ function App() {
     });
 
     setIsAuth(false);
-
   };
- 
+
   return (
-    <AuthCtx.Provider value={{ user: userInfo, onLogin, onLogout}}>
-    <div className="">
-      <header className="">
+    <AuthCtx.Provider value={{ user: userInfo, onLogin, onLogout }}>
+      <div className="">
+        <header className="">
           <Navigation />
-      </header>
-      <div className='mainpage'>
-        {isAuth ?
-        <Switch>
-        {/* <Route path='/' exact component={Dashboard} /> */}
-        <Route path='/home'  component={HomePage} />
-        <Route path='/create' component={CreatePage} />
-        {/* <Route path='/login' component={LoginPage} /> */}
-        <Route path='/logout' component={Logout} />
-        <Route path='/search' component={SearchPage} />
-        <Route path='/lastVoucher' component={LastVoucher} />
-        <Route path='/register' component={RegisterPage} />
-      </Switch>
-      : <Switch>
-      <Route path='/' exact component={Dashboard} />
-      {/* <Route path='/home'  component={HomePage} /> */}
-      {/* <Route path='/create' component={CreatePage} /> */}
-      <Route path='/login' component={LoginPage} />
-      {/* <Route path='/logout' component={Logout} /> */}
-      {/* <Route path='/search' component={SearchPage} /> */}
-    </Switch>
-      }
-        
+        </header>
+        <div className="mainpage">
+          {isAuth ? (
+            <Switch>
+              {/* <Route path='/' exact component={Dashboard} /> */}
+              <Route path="/home" component={HomePage} />
+              <Route path="/create" component={CreatePage} />
+              {/* <Route path='/login' component={LoginPage} /> */}
+              <Route path="/logout" component={Logout} />
+              <Route path="/search" component={SearchPage} />
+              <Route path="/lastVoucher" component={LastVoucher} />
+              <Route path="/register" component={RegisterPage} />
+            </Switch>
+          ) : (
+            <Switch>
+              <Route path="/" exact component={Dashboard} />
+              {/* <Route path='/home'  component={HomePage} /> */}
+              {/* <Route path='/create' component={CreatePage} /> */}
+              <Route path="/login" component={LoginPage} />
+              {/* <Route path='/logout' component={Logout} /> */}
+              {/* <Route path='/search' component={SearchPage} /> */}
+            </Switch>
+          )}
+
           {/* <CreatePage /> */}
-      
+        </div>
+        <div>
+          <br />
+        </div>
+        <Footer />
       </div>
-      <div><br /></div>
-      <Footer />
-    </div>
     </AuthCtx.Provider>
   );
 }
