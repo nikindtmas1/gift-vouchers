@@ -3,7 +3,19 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const { createAccessToken, createRefreshToken } = require('../utils/jwtUtils');
 
-exports.register = async ({username, password, roles}) => User.create({username, password, roles});
+// function register({username, password, roles}){
+
+//     let user = new User({username, password, roles})
+    
+//     return user.save();
+//     }
+
+exports.register = async ({username, password, roles}) => {
+   
+    let user = new User({username, password, roles})
+    await user.save();
+    //User.create({username, password, roles})
+};
 
 exports.login = async ({username, password}) => {
 
@@ -20,7 +32,7 @@ exports.login = async ({username, password}) => {
     if(user.username === currUser){
         
         // const saltPass = 9;
-        // const myPass = 'spa123456';
+        // const myPass = 'niki123456';
         // bcrypt.genSalt(saltPass, (err, salt) => {
         //     bcrypt.hash(myPass, salt, (err, hash) => {
         //         console.log(hash)
@@ -71,3 +83,7 @@ exports.refresh = async (refreshToken) => {
         return null;
     }
 };
+
+// module.exports = {
+//     register,
+// }
