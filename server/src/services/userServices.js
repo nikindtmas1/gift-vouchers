@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const { createAccessToken, createRefreshToken } = require('../utils/jwtUtils');
 
+exports.register = async ({username, password, roles}) => User.create({username, password, roles});
+
 exports.login = async ({username, password}) => {
 
     const currUser = username;
