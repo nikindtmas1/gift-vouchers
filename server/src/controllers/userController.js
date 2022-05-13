@@ -4,6 +4,22 @@ const router = express.Router();
 const services = require('../services/userServices');
 const { isAuth, isGuest } = require('../middleware/authMidd');
 
+router.post('/register',  async (req, res) => {
+  let {username, password, roles} = req.body;
+
+  try {
+    let user = await services.register({username, password, roles});
+    res.json({
+      _id: user._id,
+      username: user.username,
+      userRoles: user.roles
+    });
+  } catch (error) {
+    res.json({type: 'error',
+    message: error.message
+    })
+  }
+});
 
 router.post('/login',isGuest, async (req, res) => {
     let {username, password} = req.body;
