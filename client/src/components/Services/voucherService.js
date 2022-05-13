@@ -87,16 +87,16 @@ export async function login(username, password) {
     return result;
 };
 
-// export async function register(username, password) {
-//     const result = await post(settings.host + '/users/register', { username, password });
+export async function register(username, password) {
+    const result = await post(settings.host + '/users/register', { username, password });
 
-//     sessionStorage.setItem('username', result.username);
-//     sessionStorage.setItem('authToken', result.accessToken);
-//     sessionStorage.setItem('refreshToken', result.refreshToken);
-//     sessionStorage.setItem('userId', result._id);
+    sessionStorage.setItem('username', result.username);
+    sessionStorage.setItem('authToken', result.accessToken);
+    sessionStorage.setItem('refreshToken', result.refreshToken);
+    sessionStorage.setItem('userId', result._id);
 
-//     return result;
-// };
+    return result;
+};
 
 export async function logout(token) {
     const result = await get(settings.host + '/users/logout');
