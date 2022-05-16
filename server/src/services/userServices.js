@@ -12,7 +12,10 @@ const { createAccessToken, createRefreshToken } = require('../utils/jwtUtils');
 
 exports.register = async ({username, password, roles}) => {
    
-    let user = new User({username, password, roles})
+        
+        
+        
+    let user = new User({username, hashPass, roles})
     await user.save();
     //User.create({username, password, roles})
 };
@@ -50,7 +53,7 @@ exports.login = async ({username, password}) => {
             const userRoles = user.roles;
             user.roles = userRoles;
     
-            await user.save();
+            //await user.save();
     
             return { user, accessToken, refreshToken, userRoles };
         
