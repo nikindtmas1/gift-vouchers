@@ -92,7 +92,7 @@ function App() {
               <Route path="/logout" component={Logout} />
               <Route path="/search" component={SearchPage} />
               <Route path="/lastVoucher" component={LastVoucher} />
-              <Route path="/register" component={RegisterPage} />
+              
             </Switch>
           ) : (
             <Switch>
@@ -100,6 +100,7 @@ function App() {
               {/* <Route path='/home'  component={HomePage} /> */}
               {/* <Route path='/create' component={CreatePage} /> */}
               <Route path="/login" component={LoginPage} />
+              <Route path="/register" component={RegisterPage} />
               {/* <Route path='/logout' component={Logout} /> */}
               {/* <Route path='/search' component={SearchPage} /> */}
             </Switch>
