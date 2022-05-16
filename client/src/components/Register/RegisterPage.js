@@ -9,6 +9,7 @@ const RegisterPage = () => {
   
   const history = useHistory();
 
+
   const onSubmit = (e) => {
 
     e.preventDefault();
@@ -16,7 +17,7 @@ const RegisterPage = () => {
     let formData = new FormData(e.currentTarget);
     let username = formData.get('userName').trim();
     let password = formData.get('userPassword').trim();
-    let roles = formData.get('userRoles').trim();
+    let roles = formData.get('userRoles').trim().toLowerCase();
   
     if (username === "" || password === "" || roles === "") {
       return alert("All fields are required!");
@@ -25,6 +26,10 @@ const RegisterPage = () => {
     if (username.length < 3) {
       return alert("Username input is invalid!");
     };
+
+    if (roles === "admin"){
+      return alert("The role can be only 'Editor' or 'Visitor'!")
+    }
   
     try {
     services.register(username, password, roles)
