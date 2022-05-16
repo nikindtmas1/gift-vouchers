@@ -32,6 +32,11 @@ const Navigation = () => {
           <Link to="/login">Login</Link>
         </li>
       </div>
+      <div className="navdiv">
+       <li className="navli">
+         <Link to="/register">Register</Link>
+       </li>
+     </div>
       {/* <div className="navdiv">
         <li className="navli">
           <Link to="/logout">Logout</Link>
@@ -66,11 +71,7 @@ const Navigation = () => {
          <Link to="/create">Create Voucher</Link>
        </li>
      </div>
-     <div className="navdiv">
-       <li className="navli">
-         <Link to="/register">Register</Link>
-       </li>
-     </div>
+   
      </>
     : null
     }
