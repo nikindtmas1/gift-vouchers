@@ -17,16 +17,16 @@ const userModel = new mongoose.Schema({
     }
 });
 
-// userModel.pre('save', function(next){
-//     bcrypt.genSalt(9, (err, salt) => {
-//         bcrypt.hash(this.password, salt)
-//         .then(hash => {
-//         this.password = hash;
-//         next();
-//         });
-//     })
+userModel.pre('save', function(next){
     
-// });
+        bcrypt.hash(this.password, 9)
+        .then(hash => {
+        this.password = hash;
+        next();
+        });
+    
+    
+});
 
 userModel.static('findByUsername', function(username){
     return this.findOne({username});
