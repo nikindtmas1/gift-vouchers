@@ -71,7 +71,11 @@ const Navigation = () => {
          <Link to="/create">Create Voucher</Link>
        </li>
      </div>
-   
+     <div className="navdiv">
+       <li className="navli">
+         <Link to="/catalog">All Vouchers</Link>
+       </li>
+     </div>
      </>
     : null
     }
