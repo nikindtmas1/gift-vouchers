@@ -12,12 +12,9 @@ const { createAccessToken, createRefreshToken } = require('../utils/jwtUtils');
 
 exports.register = async ({username, password, roles}) => {
    
-        
-        
-        
-    let user = new User({username, hashPass, roles})
-    await user.save();
-    //User.create({username, password, roles})
+    // let user = new User({username, hashPass, roles})
+    // await user.save();
+    User.create({username, password, roles});
 };
 
 exports.login = async ({username, password}) => {
@@ -35,7 +32,7 @@ exports.login = async ({username, password}) => {
     if(user.username === currUser){
         
         // const saltPass = 9;
-        // const myPass = 'niki123456';
+        // const myPass = 'miki123456';
         // bcrypt.genSalt(saltPass, (err, salt) => {
         //     bcrypt.hash(myPass, salt, (err, hash) => {
         //         console.log(hash)
@@ -53,7 +50,7 @@ exports.login = async ({username, password}) => {
             const userRoles = user.roles;
             user.roles = userRoles;
     
-            //await user.save();
+            await user.save();
     
             return { user, accessToken, refreshToken, userRoles };
         
