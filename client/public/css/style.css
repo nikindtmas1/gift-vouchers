@@ -416,21 +416,24 @@ input.search {
   display:flex;
 }
 
-table {
-  border-spacing: 30px;
-}
+/* table {
+  
+} */
 
 tr:nth-child(even) {
   background-color: #D6EEEE;
 }
 
 table, th, td {
+  color: rgb(51, 116, 247);
+  border-spacing: 30px;
   border: 1px solid white;
   border-collapse: collapse;
   text-align: center;
+  padding: 10px;
 }
-th, td {
-  /* background-color: #96D4D4; */
+th {
+  background-color: #6efcf386;
   text-align: center;
   padding: 10px;
 }
