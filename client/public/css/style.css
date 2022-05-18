@@ -415,3 +415,22 @@ input.search {
 .row-btn {
   display:flex;
 }
+
+table {
+  border-spacing: 30px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  text-align: center;
+}
+th, td {
+  /* background-color: #96D4D4; */
+  text-align: center;
+  padding: 10px;
+}
