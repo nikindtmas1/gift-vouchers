@@ -1,16 +1,26 @@
-import React, {useState, useEffect} from "react";
-import * as services from '../Services/data';
+import React, { useState, useEffect, useContext } from "react";
+import { Checkbox } from "@mui/material";
+import AuthCtx from "../../contexts/AuthCtx";
+import * as services from "../Services/data";
 
 const CatalogPage = () => {
 
-  const [allVouchers,setAllVouchers] = useState([]);
+  const value = useContext(AuthCtx);
+  const roles = value.user.userRoles;
+
+  const [allVouchers, setAllVouchers] = useState([]);
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = (e) => {
+    setChecked(e.target.checked);
+  };
 
   useEffect(() => {
-    services.getAll()
-    .then((result) => setAllVouchers(result))
-    .catch((err) => alert(err.message))
-  },[]);
-
+    services
+      .getAll()
+      .then((result) => setAllVouchers(result))
+      .catch((err) => alert(err.message));
+  }, []);
 
   return (
     <div>
@@ -30,30 +40,34 @@ const CatalogPage = () => {
           <th>Used Date</th>
           <th>Email</th>
         </tr>
-        {allVouchers.map((row) => 
-         <tr>
-         <td><input type="checkbox" /></td>
-         <td>{row.date}</td>
-         <td>{row.numVoucher}</td>
-         <td>{row.nameBuyer}</td>
-         <td>{row.nameOwn}</td>
-         <td>{row.nameEmployee}</td>
-         <td>{row.treatment}</td>
-         <td>{row.count}</td>
-         <td>{row.price}</td>
-         <td>{row.validDate}</td>
-         <td>{row.typeTransaction}</td>
-         <td>{row.usedDate}</td>
-         <td>{row.email}</td>
-       </tr>
-        )}
-       
-        {/* <tr>
-          <td><input type="checkbox" /></td>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
-        </tr> */}
+        {allVouchers.map((row) => (
+          <tr>
+            <td>
+              {/* <input type="checkbox" /> */}
+              <Checkbox
+                  checked={checked}
+                  onChange={
+                    roles === "admin" || roles === "editor"
+                      ? handleChange
+                      : null
+                  }
+                  inputProps={{ "aria-label": "controlled" }}
+                />
+            </td>
+            <td>{row.date}</td>
+            <td>{row.numVoucher}</td>
+            <td>{row.nameBuyer}</td>
+            <td>{row.nameOwn}</td>
+            <td>{row.nameEmployee}</td>
+            <td>{row.treatment}</td>
+            <td>{row.count}</td>
+            <td>{row.price}</td>
+            <td>{row.validDate}</td>
+            <td>{row.typeTransaction}</td>
+            <td>{row.usedDate}</td>
+            <td>{row.email}</td>
+          </tr>
+        ))}
       </table>
     </div>
   );
