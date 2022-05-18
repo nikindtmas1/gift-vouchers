@@ -1,20 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Checkbox } from "@mui/material";
-import AuthCtx from "../../contexts/AuthCtx";
+
 import * as services from "../Services/data";
 
 const CatalogPage = () => {
 
-  const value = useContext(AuthCtx);
-  const roles = value.user.userRoles;
-
   const [allVouchers, setAllVouchers] = useState([]);
-  const [checked, setChecked] = useState(false);
-
-  const handleChange = (e) => {
-    setChecked(e.target.checked);
-  };
-
+ 
   useEffect(() => {
     services
       .getAll()
@@ -43,14 +35,9 @@ const CatalogPage = () => {
         {allVouchers.map((row) => (
           <tr>
             <td>
-              {/* <input type="checkbox" /> */}
               <Checkbox
-                  checked={checked}
-                  onChange={
-                    roles === "admin" || roles === "editor"
-                      ? handleChange
-                      : null
-                  }
+                  checked={row.checked}
+                  
                   inputProps={{ "aria-label": "controlled" }}
                 />
             </td>
