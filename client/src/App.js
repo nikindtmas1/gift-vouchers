@@ -86,7 +86,7 @@ function App() {
         <div className="mainpage">
           {isAuth ? (
             <Switch>
-              {/* <Route path='/' exact component={Dashboard} /> */}
+              <Route path='/' exact component={Dashboard} />
               <Route path="/home" component={HomePage} />
               <Route path="/create" component={CreatePage} />
               {/* <Route path='/login' component={LoginPage} /> */}
