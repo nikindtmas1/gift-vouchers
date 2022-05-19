@@ -88,15 +88,11 @@ const HomePage = () => {
       .catch((error) => alert(error.message));
   };
 
-  const onDelete = async (e) => {
+  const onDelete = (e) => {
     e.preventDefault();
-    try {
-      await services.deleteVoucher(searchVoucher._id);
-      history.push("/home");
-    } catch (error) {
-      alert(error.message);
-      throw error;
-    }
+    services.deleteVoucher(searchVoucher._id)
+    .then(() => history.push("/home"))
+    .catch((error) => alert(error.message));
   };
 
   return (
