@@ -4,11 +4,9 @@ import { useHistory } from "react-router-dom";
 import AuthCtx from "../../contexts/AuthCtx";
 import Checkbox from "@mui/material/Checkbox";
 
-
 import * as services from "../Services/data";
 
 const HomePage = () => {
-
   let value = useContext(AuthCtx);
   let roles = value.user.userRoles;
 
@@ -32,23 +30,20 @@ const HomePage = () => {
     if (numberVoucher !== "" && numberVoucher !== undefined) {
       try {
         let currentVoucher = await services.getByNumber(numberVoucher);
-   
 
         if (currentVoucher.checked === true) {
           setChecked(true);
         }
-  
+
         window.scroll(10, 100);
-  
+
         setSearchVoucher(currentVoucher);
-  
+
         setIsVoucher(true);
-        
       } catch (error) {
         alert(error.message);
         throw error;
       }
-     
     }
   };
 
@@ -396,7 +391,6 @@ const HomePage = () => {
                 name="numVoucher"
                 placeholder="Search by number..."
               />
-          
             </fieldset>
             <fieldset className="enterhome">
               <button className="homebutton">Find</button>
