@@ -91,7 +91,9 @@ const HomePage = () => {
   const onDelete = (e) => {
     e.preventDefault();
     services.deleteVoucher(searchVoucher._id)
-    .then(() => history.push("/home"))
+    .then(() => {
+      history.push("/home")
+    })
     .catch((error) => alert(error.message));
   };
 
