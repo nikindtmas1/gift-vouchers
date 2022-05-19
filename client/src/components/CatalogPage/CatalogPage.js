@@ -4,9 +4,8 @@ import { Checkbox } from "@mui/material";
 import * as services from "../Services/data";
 
 const CatalogPage = () => {
-
   const [allVouchers, setAllVouchers] = useState([]);
- 
+
   useEffect(() => {
     services
       .getAll()
@@ -36,10 +35,9 @@ const CatalogPage = () => {
           <tr>
             <td>
               <Checkbox
-                  checked={row.checked}
-                  
-                  inputProps={{ "aria-label": "controlled" }}
-                />
+                checked={row.checked}
+                inputProps={{ "aria-label": "controlled" }}
+              />
             </td>
             <td>{row.date}</td>
             <td>{row.numVoucher}</td>
