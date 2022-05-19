@@ -92,6 +92,7 @@ const HomePage = () => {
     e.preventDefault();
     try {
       await services.deleteVoucher(searchVoucher._id);
+      history.push("/home");
     } catch (error) {
       alert(error.message);
       throw error;
