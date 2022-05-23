@@ -29,11 +29,11 @@ const Navigation = () => {
           <Link to="/login">Login</Link>
         </li>
       </div>
-      {/* <div className="navdiv">
+      <div className="navdiv">
        <li className="navli">
          <Link to="/register">Register</Link>
        </li>
-     </div> */}
+     </div>
       {/* <div className="navdiv">
         <li className="navli">
           <Link to="/logout">Logout</Link>
