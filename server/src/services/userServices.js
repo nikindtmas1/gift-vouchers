@@ -14,11 +14,12 @@ exports.register = ({username, password, roles}) => {
    
         const saltPass = 9;
         const myPass = password;
-        console.log(myPass);
+       
         bcrypt.genSalt(saltPass, (err, salt) => {
             bcrypt.hash(myPass, salt, (err, hash) => {
-                console.log(hash)
-                let user = new User({username, hash, roles})
+               
+                let password = hash;
+                let user = new User({username, password, roles})
                 user.save();
                
             });
