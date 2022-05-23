@@ -10,7 +10,7 @@ const { createAccessToken, createRefreshToken } = require('../utils/jwtUtils');
 //     return user.save();
 //     }
 
-exports.register = async ({username, password, roles}) => {
+exports.register = ({username, password, roles}) => {
    
         const saltPass = 9;
         const myPass = password;
@@ -19,7 +19,7 @@ exports.register = async ({username, password, roles}) => {
             bcrypt.hash(myPass, salt, (err, hash) => {
                 console.log(hash)
                 let user = new User({username, hash, roles})
-                await user.save();
+                user.save();
                
             });
         });
