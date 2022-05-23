@@ -90,10 +90,10 @@ export async function login(username, password) {
 export async function register(username, password, roles) {
     const result = await post(settings.host + '/users/register', { username, password, roles });
 
-    sessionStorage.setItem('username', result.username);
-    sessionStorage.setItem('authToken', result.accessToken);
-    sessionStorage.setItem('refreshToken', result.refreshToken);
-    sessionStorage.setItem('userId', result._id);
+    // sessionStorage.setItem('username', result.username);
+    // sessionStorage.setItem('authToken', result.accessToken);
+    // sessionStorage.setItem('refreshToken', result.refreshToken);
+    // sessionStorage.setItem('userId', result._id);
 
     return result;
 };
