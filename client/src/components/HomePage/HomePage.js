@@ -48,7 +48,7 @@ const HomePage = () => {
     }else if(nameOwner !== '' && nameOwner !== undefined){
       try {
         let vouchers = await services.getAll();
-        let currentVoucher = vouchers.find((x) => x.nameOwn === nameOwner)
+        let currentVoucher = vouchers.find((x) => x.nameOwn.toLowerCase() === nameOwner.toLowerCase())
 
         if (currentVoucher.checked === true) {
           setChecked(true);
