@@ -398,7 +398,7 @@ const HomePage = () => {
           <div className="menu">
             <div className="homeimg">
               <img
-                src="https://www.thehungrypeacock.com.au/wp-content/uploads/2020/04/gift-voucher-3-scaled.jpg"
+                src="images/gift-voucher-3-scaled.jpg"
                 alt=""
               />
             </div>
