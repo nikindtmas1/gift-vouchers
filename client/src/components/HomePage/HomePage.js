@@ -26,10 +26,29 @@ const HomePage = () => {
 
     let formData = new FormData(e.currentTarget);
     let numberVoucher = formData.get("numVoucher");
+    let nameOwner = formData.get("nameOwn");
 
     if (numberVoucher !== "" && numberVoucher !== undefined) {
       try {
         let currentVoucher = await services.getByNumber(numberVoucher);
+
+        if (currentVoucher.checked === true) {
+          setChecked(true);
+        }
+
+        window.scroll(10, 100);
+
+        setSearchVoucher(currentVoucher);
+
+        setIsVoucher(true);
+      } catch (error) {
+        alert(error.message);
+        throw error;
+      }
+    }else if(nameOwner !== '' && nameOwner !== undefined){
+      try {
+        let vouchers = await services.getAll();
+        let currentVoucher = vouchers.find((x) => x.nameOwn === nameOwner)
 
         if (currentVoucher.checked === true) {
           setChecked(true);
@@ -389,6 +408,17 @@ const HomePage = () => {
                 type="text"
                 name="numVoucher"
                 placeholder="Search by number..."
+              />
+            </fieldset>
+            <fieldset className="enterhome">
+              <button className="homebutton">Find</button>
+            </fieldset>
+            <fieldset className="url">
+              <input
+                id="url"
+                type="text"
+                name="nameOwn"
+                placeholder="Search by name..."
               />
             </fieldset>
             <fieldset className="enterhome">
