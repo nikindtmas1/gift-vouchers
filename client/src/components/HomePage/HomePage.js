@@ -418,7 +418,7 @@ const HomePage = () => {
                 id="url"
                 type="text"
                 name="nameOwn"
-                placeholder="Search by name..."
+                placeholder="Search by Owner name..."
               />
             </fieldset>
             <fieldset className="enterhome">
