@@ -57,4 +57,8 @@ voucherSchema.static('findByNumber', function(numVoucher){
     return this.findOne({numVoucher})
 });
 
+// voucherSchema.static('findByName', function(nameOwn){
+//     return this.findOne({nameOwn})
+// });
+
 module.exports = mongoose.model('Voucher', voucherSchema);
