@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
     res.json(result);
 });
 
-router.get('/:number', async (req, res) => {
+router.get('/nameOwn', async (req, res) => {
     console.log(req.params);
     // let result = await voucherService.getVoucherByNumber(req.params.id);
     // console.log(result);
