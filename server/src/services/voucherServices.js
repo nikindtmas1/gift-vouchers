@@ -12,11 +12,14 @@ const deleteVoucher = (id) => Voucher.findByIdAndDelete(id);
 
 const getVoucherByNumber = (number) => Voucher.findByNumber(Number(number));
 
+//const getVoucherByName = (name) => Voucher.findByName(name);
+
 module.exports = {
     getAllVouchers,
     getOneVoucher,
     createVoucher,
     updateVoucher,
     getVoucherByNumber,
+    //getVoucherByName,
     deleteVoucher,
 }
