@@ -15,8 +15,8 @@ export async function getAll(){
     return result;
 };
 
-// export async function getOneVoucher(id){
-//     let result = await service.get(host + `/vouchers/${id}`);
+// export async function getOneVoucher(name){
+//     let result = await service.get(host + `/vouchers/${name}`);
 //     return result;
 // };
 
