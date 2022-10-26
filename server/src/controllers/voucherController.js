@@ -15,9 +15,16 @@ router.get('/', async (req, res) => {
     res.json(vouchers);
 });
 
-router.get('/:id', async (req, res) => {
-    let result = await voucherService.getVoucherByNumber(req.params.id)
-    //let result = await voucherService.getOneVoucher(req.params.id);
+router.get('/:number', async (req, res) => {
+    
+    let result;
+    if(req.params.number.length <= 4){
+
+        result = await voucherService.getVoucherByNumber(req.params.number)
+    }else{
+
+        result = await voucherService.getOneVoucher(req.params.number);
+    }
     res.json(result);
 });
 
@@ -36,7 +43,7 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-
+   
     await voucherService.updateVoucher(req.params.id, req.body);
     res.json({ok: true});
 });
