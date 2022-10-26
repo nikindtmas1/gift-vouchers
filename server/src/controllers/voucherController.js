@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:number", async (req, res) => {
   let result;
-  if (req.params.number.length <= 4) {
+  if (req.params.number.length <= 7) {
     result = await voucherService.getVoucherByNumber(req.params.number);
   } else {
     result = await voucherService.getOneVoucher(req.params.number);
