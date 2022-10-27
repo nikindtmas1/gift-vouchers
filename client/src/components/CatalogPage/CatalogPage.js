@@ -3,7 +3,7 @@ import { Checkbox } from "@mui/material";
 
 import * as services from "../Services/data";
 
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 
 const CatalogPage = () => {
@@ -53,7 +53,7 @@ const CatalogPage = () => {
             <td>{row.validDate}</td>
             <td>{row.typeTransaction}</td>
             <td>{row.usedDate}</td>
-            <td><Link href='https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox'>{row.email}</Link></td>
+            <td><a href='https://www.abv.bg/'>{row.email}</a></td>
           </tr>
         ))}
       </table>
