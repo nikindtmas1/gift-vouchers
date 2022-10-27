@@ -3,6 +3,9 @@ import { Checkbox } from "@mui/material";
 
 import * as services from "../Services/data";
 
+import { Link } from 'react-router-dom';
+
+
 const CatalogPage = () => {
   const [allVouchers, setAllVouchers] = useState([]);
 
@@ -50,7 +53,7 @@ const CatalogPage = () => {
             <td>{row.validDate}</td>
             <td>{row.typeTransaction}</td>
             <td>{row.usedDate}</td>
-            <td>{row.email}</td>
+            <td><Link href='https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox'>{row.email}</Link></td>
           </tr>
         ))}
       </table>
